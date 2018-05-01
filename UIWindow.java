@@ -16,7 +16,7 @@ public class UIWindow extends Frame implements ActionListener
     public UIWindow()
     {
         setLayout( new FlowLayout() );
-        label = new Label( "patrick is gay" );
+        label = new Label( "maxwell is gayyyyyyy" );
         add( label );
         setVisible( true );
     }
