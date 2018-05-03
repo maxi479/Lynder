@@ -18,7 +18,9 @@ public class UIWindow extends Frame implements ActionListener
         setLayout( new FlowLayout() );
         label = new Label( "maxwell is unhappy man hehehehe" );
         add( label );
-        setVisible( true );
+        tfCount = new TextField("hello");
+        add(tfCount);
+        setVisible(true);
     }
 
 
