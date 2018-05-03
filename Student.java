@@ -1,4 +1,7 @@
 Public Student 
 {
-    darren wants big dick up his asshole
+    public class Student()
+    {
+        int hi = 4;
+    }
 }
