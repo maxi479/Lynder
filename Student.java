@@ -4,7 +4,7 @@ import java.util.*;
 public class Student
 {
     // total added score from all other students
-    private int popularity;
+    private double popularity;
 
     // whether or not he has rated every other student in the class
     private boolean rated;
@@ -16,7 +16,7 @@ public class Student
     private double gpa;
 
     // map of all students for rating, pull from array
-    private HashMap<String, Integer> ratings;
+    public HashMap<String, Integer> ratings;
 
 
     /**
