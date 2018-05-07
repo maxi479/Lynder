@@ -25,6 +25,8 @@ public class LynderUI extends Frame implements ActionListener
 
     private JLabel lblNewLabel_2;
 
+    private JLabel lblNewLabel_3;
+
 
     /**
      * Launch the application.
@@ -64,7 +66,7 @@ public class LynderUI extends Frame implements ActionListener
     private void initialize()
     {
         frame = new JFrame();
-        frame.setBounds( 200, 200, 450, 500 );
+        frame.setBounds( 300, 200, 450, 500 );
         frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         frame.getContentPane().setLayout( null );
 
@@ -92,15 +94,32 @@ public class LynderUI extends Frame implements ActionListener
 
         lblNewLabel_1 = new JLabel( "Congrats! You've been added to the system!" );
         lblNewLabel_1.setFont( new Font( "Lucida Grande", Font.PLAIN, 9 ) );
-        lblNewLabel_1.setBounds( 114, 226, 199, 26 );
+        lblNewLabel_1.setBounds( 108, 226, 199, 26 );
         frame.getContentPane().add( lblNewLabel_1 );
 
         lblNewLabel_2 = new JLabel( "" );
-        lblNewLabel_2.setFont( new Font( "Lucida Grande", Font.PLAIN, 8 ) );
-        lblNewLabel_2.setBounds( 108, 258, 205, 14 );
+        lblNewLabel_2.setFont( new Font( "Lucida Grande", Font.PLAIN, 10 ) );
+        lblNewLabel_2.setBounds( 108, 258, 400, 14 );
         frame.getContentPane().add( lblNewLabel_2 );
         lblNewLabel_1.setVisible( false );
         btnNewButton.addActionListener( this );
+
+        lblNewLabel_3 = new JLabel( "" );
+        lblNewLabel_3.setFont( new Font( "Lucida Grande", Font.PLAIN, 10 ) );
+        lblNewLabel_3.setBounds( 108, 320, 400, 14 );
+        lblNewLabel_3.setText( "Click 'NEXT' if you are the last entry!" );
+        frame.getContentPane().add( lblNewLabel_3 );
+
+        JButton btnNewButton1 = new JButton( "Next!" );
+        btnNewButton1.setBounds( 147, 350, 117, 40 );
+        frame.getContentPane().add( btnNewButton1 );
+        btnNewButton1.addActionListener( new ActionListener()
+        {
+            public void actionPerformed( ActionEvent e )
+            {
+                frame.setVisible( false );
+            }
+        } );
 
     }
 
@@ -109,10 +128,11 @@ public class LynderUI extends Frame implements ActionListener
     public void actionPerformed( ActionEvent e )
     {
         lblNewLabel_1.setVisible( true );
+        lblNewLabel_3.setVisible( true );
         name = textField.getText();
         gpa = Double.parseDouble( textField_1.getText() );
-        lblNewLabel_2.setText( "Your name is " + name + " with a GPA of " + gpa);
+        lblNewLabel_2.setText( "Your name is " + name + " with a GPA of " + gpa );
+        
     }
-    
-    
+
 }
