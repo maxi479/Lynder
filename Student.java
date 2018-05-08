@@ -13,10 +13,13 @@ public class Student
     private String name;
 
     // GPA of student
-    private double gpa;
+    private double GPA;
 
     // map of all students for rating, pull from array
     public HashMap<String, Integer> ratings;
+
+    // priority queue of the ratings of other students
+    public ArrayList<Integer> gee = new ArrayList<Integer>();
 
 
     /**
@@ -27,16 +30,24 @@ public class Student
         popularity = 0;
         rated = false;
         name = "";
-        gpa = 0;
+        GPA = 0;
     }
 
 
+    /**
+     * constructor with parameters
+     * 
+     * @param fullName
+     *            name
+     * @param gradePointAvg
+     *            GPA
+     */
     public Student( String fullName, double gradePointAvg )
     {
         popularity = 0;
         rated = false;
         name = fullName;
-        gpa = gradePointAvg;
+        GPA = gradePointAvg;
     }
 
 
@@ -49,21 +60,34 @@ public class Student
     }
 
 
-    public void rateStudents()
+    /**
+     * tells whether or not the student has rated others
+     */
+    public void ratedStudents()
     {
         rated = true;
     }
 
 
+    /**
+     * returns the name of the student
+     * 
+     * @return the name of the student
+     */
     public String getName()
     {
         return name;
     }
 
 
+    /**
+     * returns the GPA of the student
+     * 
+     * @return the GPA of the student
+     */
     public double getGPA()
     {
-        return gpa;
+        return GPA;
     }
 
 }
