@@ -10,11 +10,14 @@ public class Lynder
        
     }
     
-    public static void addNewStud(Student student)
+    public void addNewStud(Student student)
     {
         masterList.add( student );
     }
-    
+    public String test()
+    {
+        return "kk";
+    }
     public ArrayList<Student> getMasterList()
     {
         return masterList;
