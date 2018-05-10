@@ -7,12 +7,17 @@ public class Lynder
     public void sortPopularity()
     {
         
-        
+       
     }
     
     public static void addNewStud(Student student)
     {
         masterList.add( student );
+    }
+    
+    public ArrayList<Student> getMasterList()
+    {
+        return masterList;
     }
     
     
