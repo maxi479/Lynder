@@ -45,7 +45,11 @@ public class Student
      */
     public void updateMap()
     {
-
+        ArrayList<Student> temp = Lynder.getMasterList();
+        for(Student s : temp)
+        {
+            ratings.put( s.getName(), 0 );
+        }
     }
 
 
