@@ -62,7 +62,14 @@ public class Student
             ratings.put( s.getName(), 0 );
         }
     }
-
+    public void rateInput(String name, int rating)
+    {
+        if(rating < 0 || rating > 5)
+        {
+            throw new NullPointerException();
+        }
+        ratings.put( name, rating );
+    }
 
     /**
      * tells whether or not the student has rated others
