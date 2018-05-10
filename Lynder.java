@@ -1,25 +1,27 @@
 import java.util.*;
 
-// this will be the classroom class 
+
+// this will be the classroom class
 public class Lynder
 {
-    public ArrayList<Student> masterList;
+    public static ArrayList<Student> masterList = new ArrayList<Student>();
+
+
     public void sortPopularity()
     {
-        
-       
+
     }
-    
-    public void addNewStud(Student student)
+
+
+    public static void addNewStud( Student student )
+
     {
         masterList.add( student );
     }
-    
-    public ArrayList<Student> getMasterList()
+
+
+    public static ArrayList<Student> getMasterList()
     {
         return masterList;
     }
-    
-    
-   
 }
