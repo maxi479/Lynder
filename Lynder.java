@@ -14,10 +14,7 @@ public class Lynder
     {
         masterList.add( student );
     }
-    public String test()
-    {
-        return "kk";
-    }
+    
     public ArrayList<Student> getMasterList()
     {
         return masterList;
