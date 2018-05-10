@@ -90,7 +90,7 @@ public class Student
         return GPA;
     }
     
-    public void quickS(int[] arr, int low, int high) {
+    public void sort(int[] arr, int low, int high) {
         int mid = (low + high) / 2;
         int left = low;
         int right = high;
@@ -116,8 +116,8 @@ public class Student
         }
         // Recursion on left and right of the pivot
         if (low < right)
-            quickS(arr, low, right);
+            sort(arr, low, right);
         if (left < high)
-            quickS(arr, left, high);
+            sort(arr, left, high);
     }
 }
