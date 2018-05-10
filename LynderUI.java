@@ -132,7 +132,9 @@ public class LynderUI extends Frame implements ActionListener
         name = textField.getText();
         gpa = Double.parseDouble( textField_1.getText() );
         lblNewLabel_2.setText( "Your name is " + name + " with a GPA of " + gpa );
-        
+        Student newStudent = new Student( name, gpa );
+        Lynder.addNewStud(newStudent);
+
     }
 
 }
