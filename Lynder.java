@@ -8,26 +8,29 @@ public class Lynder
 
     public HashMap<String, Integer> popularity;
 
-    
+
     public void sortPopularity()
     {
 
     }
 
+
     public void compilePopularity()
     {
-        
-        for(Student s : masterList)
+
+        for ( Student s : masterList )
         {
             int pop = 0;
             String name = s.getName();
-            for(Student ss: masterList)
+            for ( Student ss : masterList )
             {
                 pop += ss.getRating( name );
             }
             popularity.put( name, pop );
         }
     }
+
+
     public static void addNewStud( Student student )
 
     {
