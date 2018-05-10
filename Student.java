@@ -90,23 +90,34 @@ public class Student
         return GPA;
     }
     
-    public void sort()
-    {
-        int low = 0;
-        int high = ;
-        /* low  --> Starting index,  high  --> Ending index */
-        quickSort(arr[], low, high)
-        {
-            if (low < high)
-            {
-                /* pi is partitioning index, arr[p] is now
-                   at right place */
-                pi = partition(arr, low, high);
-
-                quickSort(arr, low, pi - 1);  // Before pi
-                quickSort(arr, pi + 1, high); // After pi
+    public void quickS(int[] arr, int low, int high) {
+        int mid = (low + high) / 2;
+        int left = low;
+        int right = high;
+        int pivot = arr[mid]; // select middle element as pivot
+        while (left <= right) {
+            while (arr[left] < pivot)
+                left++;// find element which is greater than pivot
+            while (arr[right] > pivot)
+                right--;// //find element which is smaller than pivot
+            // System.out.println(arrA[left] + " " + pivot + " " + arrA[right]
+            // );
+            // if we found the element on the left side which is greater than
+            // pivot
+            // and element on the right side which is smaller than pivot
+            // Swap them, and increase the left and right
+            if (left <= right) {
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
             }
         }
+        // Recursion on left and right of the pivot
+        if (low < right)
+            quickS(arr, low, right);
+        if (left < high)
+            quickS(arr, left, high);
     }
-
 }
