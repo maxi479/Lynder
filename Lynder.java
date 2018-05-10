@@ -23,7 +23,7 @@ public class Lynder
             String name = s.getName();
             for(Student ss: masterList)
             {
-                
+                pop += ss.getRating( name );
             }
             popularity.put( name, pop );
         }
