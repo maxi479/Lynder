@@ -6,12 +6,12 @@ public class Lynder
 {
     public static ArrayList<Student> masterList = new ArrayList<Student>();
 
-    public HashMap<String, Integer> popularity;
+    private  Map<String, Integer> popularity = new HashMap<String, Integer>();
 
 
     public void sortPopularity()
     {
-
+        Map<String, Integer> treeMap = new TreeMap<String, Integer>(popularity);
     }
 
 
