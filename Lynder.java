@@ -15,18 +15,21 @@ public class Lynder
     }
 
 
+    /**
+     * creates a hashmap with poparity
+     */
     public void compilePopularity()
     {
 
-        for ( Student s : masterList )
+        for ( Student s : masterList ) // for every single student
         {
-            int pop = 0;
+            int pop = 0; 
             String name = s.getName();
-            for ( Student ss : masterList )
+            for ( Student ss : masterList ) // every student's rating of this single student
             {
-                pop += ss.getRating( name );
+                pop += ss.getRating( name ); // adding up all the ratings
             }
-            popularity.put( name, pop );
+            popularity.put( name, pop ); // put it into the hashmap
         }
     }
 
@@ -41,6 +44,11 @@ public class Lynder
     public static ArrayList<Student> getMasterList()
     {
         return masterList;
+    }
+    
+    public HashMap<String, Integer> getPopularityList()
+    {
+        return popularity;
     }
 
 }
