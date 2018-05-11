@@ -6,7 +6,7 @@ public class Lynder
 {
     public static ArrayList<Student> masterList = new ArrayList<Student>();
 
-    public HashMap<String, Integer> popularity;
+    public HashMap<Integer, String> popularity;
 
 
     public void sortPopularity()
@@ -29,7 +29,7 @@ public class Lynder
             {
                 pop += ss.getRating( name ); // adding up all the ratings
             }
-            popularity.put( name, pop ); // put it into the hashmap
+            popularity.put( pop, name ); // put it into the hashmap
         }
     }
 
@@ -46,7 +46,7 @@ public class Lynder
         return masterList;
     }
     
-    public HashMap<String, Integer> getPopularityList()
+    public HashMap<Integer, String> getPopularityList()
     {
         return popularity;
     }
