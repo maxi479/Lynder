@@ -72,7 +72,9 @@ public class Student
         }
         ratings.put( name, rating );
     }
-    public int getRating(String name)
+
+
+    public int getRating( String name )
     {
         return ratings.get( name );
     }
@@ -80,6 +82,8 @@ public class Student
 
     /**
      * tells whether or not the student has rated others
+     *  write code for input
+     * here
      */
     public void ratedStudents()
     {
@@ -94,6 +98,8 @@ public class Student
      */
     public String getName()
     {
+        
+        System.out.println( "hello" );
         return name;
     }
 
