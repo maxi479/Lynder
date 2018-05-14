@@ -32,7 +32,14 @@ public class Lynder
             popularity.put( pop, name ); // put it into the hashmap
         }
     }
-
+    public void makeGroup()
+    {
+        while(!popularity.isEmpty())
+        {
+            //take first one
+            
+        }
+    }
 
     public static void addNewStud( Student student )
 
