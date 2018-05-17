@@ -7,8 +7,13 @@ public class Lynder
     public static ArrayList<Student> masterList = new ArrayList<Student>();
 
     public HashMap<Integer, String> popularity;
-
-
+    public int groupSize;
+    
+    public Lynder(int size)
+    {
+        groupSize = size;
+    }
+    
     public void sortPopularity()
     {
         Map<Integer, String> treeMap = new TreeMap<Integer, String>(
@@ -47,7 +52,14 @@ public class Lynder
             popularity.put( pop, name ); // put it into the hashmap
         }
     }
-
+    public void makeGroup()
+    {
+        while(!popularity.isEmpty())
+        {
+            //take first one
+            
+        }
+    }
 
     public static void addNewStud( Student student )
 
