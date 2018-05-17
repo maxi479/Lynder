@@ -7,31 +7,34 @@ public class Lynder
     public static ArrayList<Student> masterList = new ArrayList<Student>();
 
     public HashMap<Integer, String> popularity;
-    public int groupSize;
-    
-    public Lynder(int size)
+
+    public static int groupSize;
+
+
+    public Lynder( int size )
     {
         groupSize = size;
     }
-    
+
+
     public void sortPopularity()
     {
-        Map<Integer, String> treeMap = new TreeMap<Integer, String>(
-                        new Comparator<Integer>() {
+        Map<Integer, String> treeMap = new TreeMap<Integer, String>( new Comparator<Integer>()
+        {
 
-                            @Override
-                            public int compare(Integer o1, Integer o2) {
-                                return o2.compareTo(o1);
-                            }
+            @Override
+            public int compare( Integer o1, Integer o2 )
+            {
+                return o2.compareTo( o1 );
+            }
 
-                        });
+        } );
 
-                /* For Java 8, try this lambda
-                Map<Integer, String> treeMap = new TreeMap<>(
-                                (Comparator<Integer>) (o1, o2) -> o2.compareTo(o1)
-                        );
-                */
-                treeMap.putAll(popularity);
+        /*
+         * For Java 8, try this lambda Map<Integer, String> treeMap = new
+         * TreeMap<>( (Comparator<Integer>) (o1, o2) -> o2.compareTo(o1) );
+         */
+        treeMap.putAll( popularity );
     }
 
 
@@ -43,23 +46,32 @@ public class Lynder
 
         for ( Student s : masterList ) // for every single student
         {
-            int pop = 0; 
+            int pop = 0;
             String name = s.getName();
-            for ( Student ss : masterList ) // every student's rating of this single student
+            for ( Student ss : masterList ) // every student's rating of this
+                                            // single student
             {
                 pop += ss.getRating( name ); // adding up all the ratings
             }
             popularity.put( pop, name ); // put it into the hashmap
         }
     }
+
+
     public void makeGroup()
     {
-        while(!popularity.isEmpty())
+        while ( !popularity.isEmpty() )
         {
-            //take first one
-            
+            // take first one
+
         }
     }
+    
+    public static int getGroupSize()
+    {
+        return groupSize;
+    }
+
 
     public static void addNewStud( Student student )
 
@@ -72,7 +84,8 @@ public class Lynder
     {
         return masterList;
     }
-    
+
+
     public HashMap<Integer, String> getPopularityList()
     {
         return popularity;
