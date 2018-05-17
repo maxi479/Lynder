@@ -7,8 +7,13 @@ public class Lynder
     public static ArrayList<Student> masterList = new ArrayList<Student>();
 
     public HashMap<Integer, String> popularity;
-
-
+    public int groupSize;
+    
+    public Lynder(int size)
+    {
+        groupSize = size;
+    }
+    
     public void sortPopularity()
     {
 
