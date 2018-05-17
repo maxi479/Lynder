@@ -11,7 +11,22 @@ public class Lynder
 
     public void sortPopularity()
     {
+        Map<Integer, String> treeMap = new TreeMap<Integer, String>(
+                        new Comparator<Integer>() {
 
+                            @Override
+                            public int compare(Integer o1, Integer o2) {
+                                return o2.compareTo(o1);
+                            }
+
+                        });
+
+                /* For Java 8, try this lambda
+                Map<Integer, String> treeMap = new TreeMap<>(
+                                (Comparator<Integer>) (o1, o2) -> o2.compareTo(o1)
+                        );
+                */
+                treeMap.putAll(popularity);
     }
 
 
