@@ -74,11 +74,25 @@ public class Student
     }
 
 
+    /**
+     * get the rating of any rated student that this student has rated
+     * @param name
+     * @return int from 1-5
+     */
     public int getRating( String name )
     {
         return ratings.get( name );
     }
-
+    
+    public void remove(String name)
+    {
+        ratings.remove( name );
+    }
+    
+    public int getPopularity()
+    {
+        Lynder
+    }
 
     /**
      * tells whether or not the student has rated others
@@ -99,7 +113,7 @@ public class Student
     public String getName()
     {
         
-        System.out.println( "hello" );
+       
         return name;
     }
 
