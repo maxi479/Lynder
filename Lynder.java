@@ -195,6 +195,11 @@ public class Lynder
         return popularity;
     }
     
+    public  int getPopularity(String name)
+    {
+        return popularity2.get( name );
+    }
+    
     
 
 }

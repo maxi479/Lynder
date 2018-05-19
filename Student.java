@@ -89,10 +89,6 @@ public class Student
         ratings.remove( name );
     }
     
-//    public int getPopularity()
-//    {
-//        
-//    }
 
     /**
      * tells whether or not the student has rated others
