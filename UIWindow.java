@@ -26,9 +26,9 @@ public class UIWindow extends Frame implements ActionListener
 
     public void actionPerformed( ActionEvent e )
     {
-        // TODO Auto-generated method stub
+       nienping was here
 
-    }
+    } 
 
 
     public static void main( String[] args )
