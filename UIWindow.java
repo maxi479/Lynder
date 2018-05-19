@@ -26,7 +26,7 @@ public class UIWindow extends Frame implements ActionListener
 
     public void actionPerformed( ActionEvent e )
     {
-       nienping was here
+       1+1=2
 
     } 
 
