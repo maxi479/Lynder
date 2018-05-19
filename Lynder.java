@@ -106,6 +106,7 @@ public class Lynder
              Student top = masterList2.get( str );
              StudentGroup temp = new StudentGroup();
              temp.addStudent( top );
+             removeAll(top);
              
              for( int i = 0; i < groupSize;i++)
              {
