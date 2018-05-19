@@ -89,10 +89,10 @@ public class Student
         ratings.remove( name );
     }
     
-    public int getPopularity()
-    {
-        Lynder
-    }
+//    public int getPopularity()
+//    {
+//        
+//    }
 
     /**
      * tells whether or not the student has rated others
@@ -115,6 +115,11 @@ public class Student
         
        
         return name;
+    }
+    
+    public HashMap<String, Integer> returnArray()
+    {
+        return ratings;
     }
 
 

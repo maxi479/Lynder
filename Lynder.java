@@ -13,34 +13,50 @@ public class Lynder
     public HashMap<String, Student> masterList2 = new HashMap<String, Student>();
     
     public ArrayList<StudentGroup> finalList = new ArrayList<StudentGroup>();
+    
+    public Map<Integer, String> treeMap;
 
     public static int groupSize;
 
-
+    
     public Lynder( int size )
     {
         groupSize = size;
     }
 
-
-    public void sortPopularity()
+// SORRY DARREN DONT NEED UR CODE
+//    public void sortPopularity()
+//    {
+//        Map<Integer, String> treeMap = new TreeMap<Integer, String>( new Comparator<Integer>()
+//        {
+//
+//            @Override
+//            public int compare( Integer o1, Integer o2 )
+//            {
+//                return o2.compareTo( o1 );
+//            }
+//
+//        } );
+//
+//        /*
+//         * For Java 8, try this lambda Map<Integer, String> treeMap = new
+//         * TreeMap<>( (Comparator<Integer>) (o1, o2) -> o2.compareTo(o1) );
+//         */
+//        treeMap.putAll( popularity );
+//    }
+    
+    public String topStudent()
     {
-        Map<Integer, String> treeMap = new TreeMap<Integer, String>( new Comparator<Integer>()
+        int topPop = 0;
+        for(Map.Entry<Integer, String> s : popularity.entrySet())
         {
-
-            @Override
-            public int compare( Integer o1, Integer o2 )
+            if(topPop <= (int)s.getKey())
             {
-                return o2.compareTo( o1 );
+                topPop = (int)s.getKey();
             }
-
-        } );
-
-        /*
-         * For Java 8, try this lambda Map<Integer, String> treeMap = new
-         * TreeMap<>( (Comparator<Integer>) (o1, o2) -> o2.compareTo(o1) );
-         */
-        treeMap.putAll( popularity );
+        }
+        String s = popularity.get( topPop );
+        return s;
     }
 
 
@@ -80,24 +96,60 @@ public class Lynder
         }
     }
     
-    
-
+   
 
     public void makeGroup()
     {
         while ( !popularity.isEmpty() )
         {
-             String str = popularity.getTop();
-             Student s = masterList2.get( str );
+             String str = topStudent();
+             Student top = masterList2.get( str );
              StudentGroup temp = new StudentGroup();
-             for(int i = 0; i < groupSize; i++)
+             temp.addStudent( top );
+             
+             for( int i = 0; i < groupSize;i++)
              {
+                 
+                 String name = "";
+                 for(Student s: masterList)
+                 {
+                     int avg = 0;
+                     name = s.getName();
+                     temp.addStudent( s );
+                     if(groupAvg(temp) > avg)
+                     {
+                         avg = groupAvg(temp);
+                         break;
+                         
+                     }
+                     else
+                     {
+                         temp.removeTemp();
+                     }
+                 }
+                 
+                 removeAll(name);
                  
              }
              
              finalList.add( temp );
         }
         
+    }
+    
+    public int groupAvg(StudentGroup sg)
+    {
+        int sum = 0;
+        int size = sg.returnArray().size();
+        for(Student s : sg.returnArray())
+        {
+            for(Student st : sg.returnArray())
+            {
+                String stu = st.getName();
+                sum += s.getRating( stu );
+            }
+        }
+        return sum / size;
     }
     
     /**

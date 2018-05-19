@@ -30,5 +30,13 @@ public class StudentGroup
         }
         return false;
     }
+    public ArrayList<Student> returnArray()
+    {
+        return group;
+    }
+    public void removeTemp()
+    {
+        group.remove( group.size()-1 );
+    }
 
 }
