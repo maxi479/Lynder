@@ -26,9 +26,9 @@ public class UIWindow extends Frame implements ActionListener
 
     public void actionPerformed( ActionEvent e )
     {
-        // TODO Auto-generated method stub
+       1+1=2
 
-    }
+    } 
 
 
     public static void main( String[] args )
