@@ -209,11 +209,41 @@ public class Lynder
     }
 
 
-    public void addShits()
+    public void addStudents()
     {
-        Lynder temp = new Lynder( 4 );
-        masterList.add( new Student( "Ashwin", 4.0 ) );
-
+        Lynder temp = new Lynder( 4);
+        masterList.add( new Student( "Washwin", 4.0 ) );
+        masterList.add(  new Student( "Wandrew", 4.0) );
+        masterList.add( new Student( "Wames", 6.0) );
+        masterList.add( new Student( "Winja", 4.0) );
+        masterList.add( new Student( "Waya", 3.5) );
+        masterList.add( new Student( "Wanusha", 4.0) );
+        masterList.add( new Student( "Woshua", 4.0) );
+        masterList.add( new Student( "Wiroki", 3.9) );
+        masterList.add( new Student( "Wichard", 3.5) );
+        masterList.add( new Student( "Wrish", 2.0) );
+        masterList.add( new Student( "Wason", 4.0) );
+        masterList.add( new Student( "Wai", 3.8) );
+        masterList.add( new Student( "WindianWirl", 3.6) );
+        masterList.add( new Student( "Wasta", 3.4) );
+        masterList.add( new Student( "Wrace", 3.0) );
+        masterList.add( new Student( "Wottem", 1.0) );
+        masterList.add( new Student( "Wian", 3.9) );
+        masterList.add( new Student( "Warren", 3.9) );
+        masterList.add( new Student( "Waxwell", 4.0) );
+        masterList.add( new Student( "Wamol", 4.0) );
+        masterList.add( new Student( "Warles", 3.8) );        
+        masterList.add( new Student( "Wansen", 4.0) );
+        masterList.add( new Student( "Wason2", 3.0) );
+        masterList.add( new Student( "WindianWoy", 3.8) );
+        masterList.add( new Student( "WindianWirl2", 3.0) );
+        masterList.add( new Student( "Wangela", 3.7) );        
+        masterList.add( new Student( "WasianWirl", 3.6) );
+        masterList.add( new Student( "WasianWirl2", 3.0) );
+        masterList.add( new Student( "Lishika", 3.8) );
+        masterList.add( new Student( "Lishita", 3.9) );
+        masterList.add( new Student( "Illiam", 4.0) );              
+        masterList.add( new Student( "WindianWirl5", 3.0) );
     }
 
 }
