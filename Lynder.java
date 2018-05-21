@@ -155,6 +155,18 @@ public class Lynder
         }
         return sum / size;
     }
+    
+    public void print(ArrayList<StudentGroup> input)
+    {
+        for(StudentGroup s : input)
+        {
+            for(Student stu :s.returnArray())
+            {
+                System.out.print( stu.getName() );
+            }
+            System.out.println();
+        }
+    }
 
 
     /**
