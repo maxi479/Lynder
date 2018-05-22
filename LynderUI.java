@@ -141,6 +141,7 @@ public class LynderUI extends Frame implements ActionListener
         lblNewLabel_2.setText( "Your name is " + name + " with a GPA of " + gpa );
         Student newStudent = new Student( name, gpa );
         Lynder.addNewStud( newStudent );
+        setVisible(false);
 
     }
 

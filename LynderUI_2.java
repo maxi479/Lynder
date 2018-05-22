@@ -69,6 +69,7 @@ public class LynderUI_2
         list.setVisibleRowCount( model.size() );
         list.setSelectionMode( ListSelectionModel.SINGLE_INTERVAL_SELECTION );
         list.setBounds( 50, 50, 100, 50 );
+        JScrollPane pane = new JScrollPane( list );
         frame.add( list );
         final JLabel lblNewLabel = new JLabel(
             "Selected Student Name: " + list.getSelectedValue() );
@@ -86,7 +87,7 @@ public class LynderUI_2
         } );
         final JTextField textField = new JTextField();
         textField.setText( "enter rating" );
-        textField.setBounds( 90, 90, 100, 25 );
+        textField.setBounds( 90, 120, 100, 25 );
         frame.add( textField );
         final JButton button = new JButton();
         button.setText( "enter" );
@@ -109,7 +110,7 @@ public class LynderUI_2
 
         final JButton butt = new JButton();
         butt.setText( "Last Entry" );
-        butt.setBounds( 100, 150, 80, 30 );
+        butt.setBounds( 200, 40, 150, 30 );
         butt.addActionListener( new ActionListener()
         {
             public void actionPerformed( ActionEvent e )

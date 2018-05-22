@@ -227,11 +227,11 @@ public class Lynder
         Lynder main = new Lynder( 2 );
         main.addStudents();
         LynderUI dar = new LynderUI();
-        dar.createAndShow();
+        dar.main( args );
         for ( Student s : masterList )
         {
             LynderUI_2 temp = new LynderUI_2( s );
-
+            temp.main( args );
         }
     }
 

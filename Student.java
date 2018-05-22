@@ -76,6 +76,7 @@ public class Student
 
     /**
      * get the rating of any rated student that this student has rated
+     * 
      * @param name
      * @return int from 1-5
      */
@@ -83,16 +84,16 @@ public class Student
     {
         return ratings.get( name );
     }
-    
-    public void remove(String name)
+
+
+    public void remove( String name )
     {
         ratings.remove( name );
     }
-    
+
 
     /**
-     * tells whether or not the student has rated others
-     *  write code for input
+     * tells whether or not the student has rated others write code for input
      * here
      */
     public void ratedStudents()
@@ -108,11 +109,11 @@ public class Student
      */
     public String getName()
     {
-        
-       
+
         return name;
     }
-    
+
+
     public HashMap<String, Integer> returnArray()
     {
         return ratings;
@@ -127,6 +128,13 @@ public class Student
     public double getGPA()
     {
         return GPA;
+    }
+
+
+    public String toString()
+    {
+        return getName();
+
     }
 
 }
