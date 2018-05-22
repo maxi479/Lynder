@@ -13,7 +13,7 @@ public class LynderUI_2
     private JList list;
 
     private int index;
-    
+
     private static Student stud;
 
 
@@ -28,7 +28,7 @@ public class LynderUI_2
             {
                 try
                 {
-                    LynderUI_2 window = new LynderUI_2(stud);
+                    LynderUI_2 window = new LynderUI_2( stud );
                     window.frame.setVisible( true );
                 }
                 catch ( Exception e )
@@ -43,7 +43,7 @@ public class LynderUI_2
     /**
      * Create the application.
      */
-    public LynderUI_2(Student stu)
+    public LynderUI_2( Student stu )
     {
         stud = stu;
         initialize();
@@ -101,10 +101,35 @@ public class LynderUI_2
                 int index = selmodel.getMinSelectionIndex();
                 if ( index >= 0 )
                     model.remove( index );
+                stud.rateInput( name, Integer.parseInt( textField.getText() ) );
             }
         } );
         button.setBounds( 95, 150, 100, 50 );
         frame.add( button );
+
+        final JButton butt = new JButton();
+        butt.setText( "Last Entry" );
+        butt.setBounds( 100, 150, 80, 30 );
+        butt.addActionListener( new ActionListener()
+        {
+            public void actionPerformed( ActionEvent e )
+            {
+                setVisible( false );
+                frame.dispose();
+            }
+        } );
+        frame.add( butt );
+
+    }
+
+
+    public void setVisible( boolean b )
+    {
+        if ( b == true )
+        {
+            setVisible( true );
+        }
+        setVisible( false );
 
     }
 }

@@ -155,12 +155,13 @@ public class Lynder
         }
         return sum / size;
     }
-    
-    public void print(ArrayList<StudentGroup> input)
+
+
+    public void print( ArrayList<StudentGroup> input )
     {
-        for(StudentGroup s : input)
+        for ( StudentGroup s : input )
         {
-            for(Student stu :s.returnArray())
+            for ( Student stu : s.returnArray() )
             {
                 System.out.print( stu.getName() );
             }
@@ -221,9 +222,22 @@ public class Lynder
     }
 
 
+    public static void main( String[] args )
+    {
+        Lynder main = new Lynder( 2 );
+        main.addStudents();
+        LynderUI dar = new LynderUI();
+        dar.createAndShow();
+        for ( Student s : masterList )
+        {
+            LynderUI_2 temp = new LynderUI_2( s );
+
+        }
+    }
+
+
     public void addStudents()
     {
-        Lynder temp = new Lynder( 4 );
         masterList.add( new Student( "Washwin", 4.0 ) );
         masterList.add( new Student( "Wandrew", 4.0 ) );
         masterList.add( new Student( "Wames", 6.0 ) );
