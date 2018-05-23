@@ -31,7 +31,7 @@ public class LynderUI extends Frame implements ActionListener
     /**
      * Launch the application.
      */
-    public static void main( String[] args )
+    public void main( String[] args )
     {
         EventQueue.invokeLater( new Runnable()
         {
@@ -118,6 +118,11 @@ public class LynderUI extends Frame implements ActionListener
             public void actionPerformed( ActionEvent e )
             {
                 frame.setVisible( false );
+                //for ( Student s : Lynder.getMasterList() )
+                {
+                    LynderUI_2 temp = new LynderUI_2( Lynder.getMasterList().get( 0 ) );
+                    temp.main( null );
+                }
             }
         } );
 
@@ -141,7 +146,7 @@ public class LynderUI extends Frame implements ActionListener
         lblNewLabel_2.setText( "Your name is " + name + " with a GPA of " + gpa );
         Student newStudent = new Student( name, gpa );
         Lynder.addNewStud( newStudent );
-        setVisible(false);
+        setVisible( false );
 
     }
 

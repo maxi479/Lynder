@@ -19,6 +19,8 @@ public class Lynder
 
     public static int groupSize;
 
+    public static int i = 2;
+
 
     public Lynder( int size )
     {
@@ -222,17 +224,19 @@ public class Lynder
     }
 
 
+    public static int iterator()
+    {
+        return i++;
+    }
+
+
     public static void main( String[] args )
     {
         Lynder main = new Lynder( 2 );
         main.addStudents();
         LynderUI dar = new LynderUI();
         dar.main( args );
-        for ( Student s : masterList )
-        {
-            LynderUI_2 temp = new LynderUI_2( s );
-            temp.main( args );
-        }
+
     }
 
 

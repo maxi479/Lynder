@@ -63,19 +63,31 @@ public class LynderUI_2
         final DefaultListModel<String> model = new DefaultListModel<String>();
         for ( Student stu : Lynder.getMasterList() )
         {
-            model.addElement( stu.toString() );
+            if ( stu.getName().equals( stud.getName() ) )
+            {
+
+            }
+            else
+            {
+                model.addElement( stu.toString() );
+            }
+
         }
         list = new JList<String>( model );
         list.setVisibleRowCount( model.size() );
         list.setSelectionMode( ListSelectionModel.SINGLE_INTERVAL_SELECTION );
         list.setBounds( 50, 50, 100, 50 );
         JScrollPane pane = new JScrollPane( list );
-        frame.add( list );
+        pane.setBounds( 50, 50, 100, 50 );
+        frame.add( pane );
         final JLabel lblNewLabel = new JLabel(
             "Selected Student Name: " + list.getSelectedValue() );
         lblNewLabel.setBounds( 80, 80, 200, 100 );
         lblNewLabel.setVisible( false );
         frame.add( lblNewLabel );
+        final JLabel name = new JLabel( "Your name is " + stud.getName() );
+        name.setBounds( 150, 150, 300, 100 );
+        frame.add( name );
         list.addListSelectionListener( new ListSelectionListener()
         {
             public void valueChanged( ListSelectionEvent e )
@@ -102,35 +114,25 @@ public class LynderUI_2
                 int index = selmodel.getMinSelectionIndex();
                 if ( index >= 0 )
                     model.remove( index );
-                stud.rateInput( name, Integer.parseInt( textField.getText() ) );
+                stud.rateInput( name, (int)Integer.parseInt( textField.getText() ) );
             }
         } );
         button.setBounds( 95, 150, 100, 50 );
         frame.add( button );
-
-        final JButton butt = new JButton();
-        butt.setText( "Last Entry" );
-        butt.setBounds( 200, 40, 150, 30 );
-        butt.addActionListener( new ActionListener()
+        final JButton LastEntry = new JButton();
+        LastEntry.setText( "Last Entry" );
+        LastEntry.setBounds( 200, 40, 150, 30 );
+        LastEntry.addActionListener( new ActionListener()
         {
             public void actionPerformed( ActionEvent e )
             {
-                setVisible( false );
-                frame.dispose();
+                frame.setVisible( false );
+                LynderUI_2 next = new LynderUI_2( Lynder.getMasterList().get( Lynder.iterator() ) );
+                next.main( null );
             }
         } );
-        frame.add( butt );
+        frame.add( LastEntry );
 
     }
 
-
-    public void setVisible( boolean b )
-    {
-        if ( b == true )
-        {
-            setVisible( true );
-        }
-        setVisible( false );
-
-    }
 }
