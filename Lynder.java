@@ -6,9 +6,9 @@ public class Lynder
 {
     public static ArrayList<Student> masterList = new ArrayList<Student>();// b4
                                                                            // popularity
-    public static HashMap<Integer, String> popularity;// by popularity
+    public static HashMap<Integer, String> popularity = new HashMap<Integer, String>();// by popularity
 
-    public static HashMap<String, Integer> popularity2;// by name
+    public static HashMap<String, Integer> popularity2 = new HashMap<String, Integer>();
 
     public static HashMap<String, Student> masterList2 = new HashMap<String, Student>();
 
@@ -49,6 +49,10 @@ public class Lynder
     // treeMap.putAll( popularity );
     // }
 
+    /**
+     * the student with the highest popularity
+     * @return the student with the highest popularity
+     */
     public static String topStudent()
     {
         int topPop = 0;
@@ -64,12 +68,16 @@ public class Lynder
     }
 
 
+    
     /**
-     * creates a hashmap with poparity
+     * basically updates all maps
      */
     public static void compilePopularity()
     {
         // this is to make the popularity map
+        popularity2.clear();
+        popularity.clear();
+        masterList2.clear();
         for ( Student s : masterList ) // for every single student
         {
             int pop = 0;
@@ -100,6 +108,9 @@ public class Lynder
     }
 
 
+    /**
+     * literally the entire project
+     */
     public static void makeGroup()
     {
         while ( !popularity.isEmpty() )
@@ -141,6 +152,11 @@ public class Lynder
     }
 
 
+    /**
+     * returns the average likness for each group the higer the number the more compatable they are
+     * @param sg
+     * @return
+     */
     public static int groupAvg( StudentGroup sg )
     {
         int sum = 0;
@@ -157,15 +173,22 @@ public class Lynder
     }
 
 
-    public void print( ArrayList<StudentGroup> input )
+    /**
+     * prints the final list of students
+     */
+    public static void print()
     {
-        for ( StudentGroup s : input )
+        int groupNum = 0;
+        for ( StudentGroup s : finalList )
         {
+            System.out.print( "Group Number #" + groupNum + ": (" );
             for ( Student stu : s.returnArray() )
             {
-                System.out.print( stu.getName() );
+                System.out.print( stu.getName() + ", ");
             }
+            System.out.print( ")");
             System.out.println();
+            groupNum++;
         }
     }
 
@@ -177,6 +200,7 @@ public class Lynder
      */
     public static void removeAll( String str )
     {
+        compilePopularity();
         Student stu = masterList2.get( str );
         int pop = popularity2.get( str );
         for ( Student s : masterList )
@@ -187,6 +211,7 @@ public class Lynder
         masterList2.remove( str );
         popularity.remove( pop );
         popularity2.remove( str );
+        compilePopularity();
 
     }
 

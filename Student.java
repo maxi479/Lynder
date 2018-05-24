@@ -80,7 +80,14 @@ public class Student
      */
     public int getRating( String name )
     {
-        return ratings.get( name );
+        if(!ratings.containsKey( name ))
+        {
+        return 0;
+        }
+        else
+        {
+            return ratings.get(name);
+        }
     }
 
 

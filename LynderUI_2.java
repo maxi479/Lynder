@@ -113,7 +113,7 @@ public class LynderUI_2
                 String name = model.elementAt( index );
                 if ( index >= 0 )
                     model.remove( index );
-                System.out.println( name + Integer.parseInt( textField.getText() ) );
+                System.out.println( name + " " + Integer.parseInt( textField.getText() ) );
                 stud.rateInput( name, Integer.parseInt( textField.getText() ) );
             }
         } );
@@ -137,6 +137,7 @@ public class LynderUI_2
                 {
                     Lynder.compilePopularity();
                     Lynder.makeGroup();
+                    Lynder.print();
                 }
 
             }

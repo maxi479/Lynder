@@ -17,6 +17,11 @@ public class StudentGroup
     }
 
 
+    /**
+     * gets the nth student
+     * @param n
+     * @return
+     */
     public Student getNth( int n )
     {
         return group.get( n );
