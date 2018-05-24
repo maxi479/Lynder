@@ -6,7 +6,9 @@ public class Lynder
 {
     public static ArrayList<Student> masterList = new ArrayList<Student>();// b4
                                                                            // popularity
-    public static HashMap<Integer, String> popularity = new HashMap<Integer, String>();// by popularity
+
+    public static HashMap<Integer, String> popularity = new HashMap<Integer, String>();// by
+                                                                                       // popularity
 
     public static HashMap<String, Integer> popularity2 = new HashMap<String, Integer>();
 
@@ -51,6 +53,7 @@ public class Lynder
 
     /**
      * the student with the highest popularity
+     * 
      * @return the student with the highest popularity
      */
     public static String topStudent()
@@ -68,7 +71,6 @@ public class Lynder
     }
 
 
-    
     /**
      * basically updates all maps
      */
@@ -82,9 +84,10 @@ public class Lynder
         {
             int pop = 0;
             String name = s.getName();
-            for ( Student ss : masterList ) // every student's rating of this                                            // single student
+            for ( Student ss : masterList ) // every student's rating of this //
+                                            // single student
             {
-                pop += ss.getRating( name ); // adding up all the ratings                
+                pop += ss.getRating( name ); // adding up all the ratings
             }
             popularity.put( pop, name ); // put it into the hashmap
         }
@@ -110,6 +113,8 @@ public class Lynder
 
     /**
      * literally the entire project
+     * 
+     * 
      */
     public static void makeGroup()
     {
@@ -118,7 +123,14 @@ public class Lynder
             String str = topStudent();
             Student top = masterList2.get( str );
             StudentGroup temp = new StudentGroup();
-            temp.addStudent( top );
+            StudentGroup group = new StudentGroup();
+            temp.addStudent( 0, top );
+            group.addStudent( 0, top );
+            // right now the problem is i need to add someone to arraylist or
+            // replace at a specific index, but the arraylist is empty and when
+            // i try and get or replace an index that doesnt exist evertything
+            // goes to shit so some how make the add student method replace a
+            // student if they exist and add it if it doesnt exist
 
             removeAll( str );
             for ( int i = 1; i < groupSize; i++ )
@@ -129,16 +141,17 @@ public class Lynder
                 {
                     int avg = 0;
                     name = s.getName();
-                    temp.addStudent(i, s );
+                    temp.addStudent( i, s );
                     if ( groupAvg( temp ) >= avg )
                     {
                         avg = groupAvg( temp );
-                        break;
+                        temp.removeTemp( i );
+                        group.addStudent( i, s );
 
                     }
                     else
                     {
-                        temp.removeTemp(i);
+                        temp.removeTemp( i );
                     }
                 }
 
@@ -146,14 +159,16 @@ public class Lynder
 
             }
 
-            finalList.add( temp );
+            finalList.add( group );
         }
 
     }
 
 
     /**
-     * returns the average likness for each group the higer the number the more compatable they are
+     * returns the average likness for each group the higer the number the more
+     * compatable they are
+     * 
      * @param sg
      * @return
      */
@@ -184,9 +199,9 @@ public class Lynder
             System.out.print( "Group Number #" + groupNum + ": (" );
             for ( Student stu : s.returnArray() )
             {
-                System.out.print( stu.getName() + ", ");
+                System.out.print( stu.getName() + ", " );
             }
-            System.out.print( ")");
+            System.out.print( ")" );
             System.out.println();
             groupNum++;
         }
@@ -202,15 +217,15 @@ public class Lynder
     {
         compilePopularity();
         Student stu = masterList2.get( str );
-        //int pop = popularity2.get( str );
+        // int pop = popularity2.get( str );
         for ( Student s : masterList )
         {
             s.remove( str );
         }
         masterList.remove( stu );
-        //masterList2.remove( str );
-        //popularity.remove( pop );
-       // popularity2.remove( str );
+        // masterList2.remove( str );
+        // popularity.remove( pop );
+        // popularity2.remove( str );
         compilePopularity();
 
     }
@@ -269,33 +284,33 @@ public class Lynder
         masterList.add( new Student( "Wames", 6.0 ) );
         masterList.add( new Student( "Winja", 4.0 ) );
         masterList.add( new Student( "Waya", 3.5 ) );
-//        masterList.add( new Student( "Wanusha", 4.0 ) );
-//        masterList.add( new Student( "Woshua", 4.0 ) );
-//        masterList.add( new Student( "Wiroki", 3.9 ) );
-//        masterList.add( new Student( "Wichard", 3.5 ) );
-//        masterList.add( new Student( "Wrish", 2.0 ) );
-//        masterList.add( new Student( "Wason", 4.0 ) );
-//        masterList.add( new Student( "Wai", 3.8 ) );
-//        masterList.add( new Student( "WindianWirl", 3.6 ) );
-//        masterList.add( new Student( "Wasta", 3.4 ) );
-//        masterList.add( new Student( "Wrace", 3.0 ) );
-//        masterList.add( new Student( "Wottem", 1.0 ) );
-//        masterList.add( new Student( "Wian", 3.9 ) );
-//        masterList.add( new Student( "Warren", 3.9 ) );
-//        masterList.add( new Student( "Waxwell", 4.0 ) );
-//        masterList.add( new Student( "Wamol", 4.0 ) );
-//        masterList.add( new Student( "Warles", 3.8 ) );
-//        masterList.add( new Student( "Wansen", 4.0 ) );
-//        masterList.add( new Student( "Wason2", 3.0 ) );
-//        masterList.add( new Student( "WindianWoy", 3.8 ) );
-//        masterList.add( new Student( "WindianWirl2", 3.0 ) );
-//        masterList.add( new Student( "Wangela", 3.7 ) );
-//        masterList.add( new Student( "WasianWirl", 3.6 ) );
-//        masterList.add( new Student( "WasianWirl2", 3.0 ) );
-//        masterList.add( new Student( "Lishika", 3.8 ) );
-//        masterList.add( new Student( "Lishita", 3.9 ) );
-//        masterList.add( new Student( "Illiam", 4.0 ) );
-//        masterList.add( new Student( "WindianWirl5", 3.0 ) );
+        // masterList.add( new Student( "Wanusha", 4.0 ) );
+        // masterList.add( new Student( "Woshua", 4.0 ) );
+        // masterList.add( new Student( "Wiroki", 3.9 ) );
+        // masterList.add( new Student( "Wichard", 3.5 ) );
+        // masterList.add( new Student( "Wrish", 2.0 ) );
+        // masterList.add( new Student( "Wason", 4.0 ) );
+        // masterList.add( new Student( "Wai", 3.8 ) );
+        // masterList.add( new Student( "WindianWirl", 3.6 ) );
+        // masterList.add( new Student( "Wasta", 3.4 ) );
+        // masterList.add( new Student( "Wrace", 3.0 ) );
+        // masterList.add( new Student( "Wottem", 1.0 ) );
+        // masterList.add( new Student( "Wian", 3.9 ) );
+        // masterList.add( new Student( "Warren", 3.9 ) );
+        // masterList.add( new Student( "Waxwell", 4.0 ) );
+        // masterList.add( new Student( "Wamol", 4.0 ) );
+        // masterList.add( new Student( "Warles", 3.8 ) );
+        // masterList.add( new Student( "Wansen", 4.0 ) );
+        // masterList.add( new Student( "Wason2", 3.0 ) );
+        // masterList.add( new Student( "WindianWoy", 3.8 ) );
+        // masterList.add( new Student( "WindianWirl2", 3.0 ) );
+        // masterList.add( new Student( "Wangela", 3.7 ) );
+        // masterList.add( new Student( "WasianWirl", 3.6 ) );
+        // masterList.add( new Student( "WasianWirl2", 3.0 ) );
+        // masterList.add( new Student( "Lishika", 3.8 ) );
+        // masterList.add( new Student( "Lishita", 3.9 ) );
+        // masterList.add( new Student( "Illiam", 4.0 ) );
+        // masterList.add( new Student( "WindianWirl5", 3.0 ) );
     }
 
 }

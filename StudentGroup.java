@@ -14,6 +14,7 @@ public class StudentGroup
     {
         completeGroup = false;
         size = Lynder.getGroupSize();
+        
     }
 
 
@@ -25,7 +26,9 @@ public class StudentGroup
      */
     public Student getNth( int n )
     {
+
         return group.get( n );
+
     }
 
 
@@ -36,10 +39,15 @@ public class StudentGroup
     }
 
 
+    /**
+     * TODO Write your method description here.
+     * @param i
+     * @param s
+     */
     public void addStudent( int i, Student s )
     {
+        // make this shit work so that it adds a student if there is nothing at the index and replaces the student if there is a student there
         group.add( i, s );
-
     }
 
 
@@ -59,9 +67,9 @@ public class StudentGroup
     }
 
 
-    public void removeTemp(int i)
+    public void removeTemp( int i )
     {
-        group.remove(i);
+        group.remove( i );
     }
 
 
