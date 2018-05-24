@@ -99,7 +99,7 @@ public class LynderUI extends Frame implements ActionListener
 
         lblNewLabel_2 = new JLabel( "" );
         lblNewLabel_2.setFont( new Font( "Lucida Grande", Font.PLAIN, 10 ) );
-        lblNewLabel_2.setBounds( 108, 258, 400, 14 );
+        lblNewLabel_2.setBounds( 108, 270, 400, 14 );
         frame.getContentPane().add( lblNewLabel_2 );
         lblNewLabel_1.setVisible( false );
         btnNewButton.addActionListener( this );

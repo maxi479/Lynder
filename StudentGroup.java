@@ -19,6 +19,7 @@ public class StudentGroup
 
     /**
      * gets the nth student
+     * 
      * @param n
      * @return
      */
@@ -31,6 +32,14 @@ public class StudentGroup
     public void addStudent( Student s )
     {
         group.add( s );
+
+    }
+
+
+    public void addStudent( int i, Student s )
+    {
+        group.add( i, s );
+
     }
 
 
@@ -50,9 +59,9 @@ public class StudentGroup
     }
 
 
-    public void removeTemp()
+    public void removeTemp(int i)
     {
-        group.remove( group.size() - 1 );
+        group.remove(i);
     }
 
 

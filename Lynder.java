@@ -121,7 +121,7 @@ public class Lynder
             temp.addStudent( top );
 
             removeAll( str );
-            for ( int i = 0; i < groupSize; i++ )
+            for ( int i = 1; i < groupSize; i++ )
             {
 
                 String name = "";
@@ -129,8 +129,8 @@ public class Lynder
                 {
                     int avg = 0;
                     name = s.getName();
-                    temp.addStudent( s );
-                    if ( groupAvg( temp ) > avg )
+                    temp.addStudent(i, s );
+                    if ( groupAvg( temp ) >= avg )
                     {
                         avg = groupAvg( temp );
                         break;
@@ -138,7 +138,7 @@ public class Lynder
                     }
                     else
                     {
-                        temp.removeTemp();
+                        temp.removeTemp(i);
                     }
                 }
 
@@ -202,15 +202,15 @@ public class Lynder
     {
         compilePopularity();
         Student stu = masterList2.get( str );
-        int pop = popularity2.get( str );
+        //int pop = popularity2.get( str );
         for ( Student s : masterList )
         {
             s.remove( str );
         }
         masterList.remove( stu );
-        masterList2.remove( str );
-        popularity.remove( pop );
-        popularity2.remove( str );
+        //masterList2.remove( str );
+        //popularity.remove( pop );
+       // popularity2.remove( str );
         compilePopularity();
 
     }
@@ -267,8 +267,8 @@ public class Lynder
         masterList.add( new Student( "Washwin", 4.0 ) );
         masterList.add( new Student( "Wandrew", 4.0 ) );
         masterList.add( new Student( "Wames", 6.0 ) );
-//        masterList.add( new Student( "Winja", 4.0 ) );
-//        masterList.add( new Student( "Waya", 3.5 ) );
+        masterList.add( new Student( "Winja", 4.0 ) );
+        masterList.add( new Student( "Waya", 3.5 ) );
 //        masterList.add( new Student( "Wanusha", 4.0 ) );
 //        masterList.add( new Student( "Woshua", 4.0 ) );
 //        masterList.add( new Student( "Wiroki", 3.9 ) );
