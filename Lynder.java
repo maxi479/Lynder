@@ -126,12 +126,6 @@ public class Lynder
             StudentGroup group = new StudentGroup();
             temp.addStudent( 0, top );
             group.addStudent( 0, top );
-            // right now the problem is i need to add someone to arraylist or
-            // replace at a specific index, but the arraylist is empty and when
-            // i try and get or replace an index that doesnt exist evertything
-            // goes to shit so some how make the add student method replace a
-            // student if they exist and add it if it doesnt exist
-
             removeAll( str );
             for ( int i = 1; i < groupSize; i++ )
             {
@@ -270,7 +264,7 @@ public class Lynder
 
     public static void main( String[] args )
     {
-        Lynder main = new Lynder( 2 );
+        Lynder main = new Lynder( groupSize );
         main.addStudents();
         LynderUI dar = new LynderUI();
         dar.main( args );
@@ -280,9 +274,9 @@ public class Lynder
     public void addStudents()
     {
         masterList.add( new Student( "Washwin", 4.0 ) );
-        //masterList.add( new Student( "Wandrew", 4.0 ) );
+        // masterList.add( new Student( "Wandrew", 4.0 ) );
         masterList.add( new Student( "Wames", 4.0 ) );
-        //masterList.add( new Student( "Winja", 4.0 ) );
+        // masterList.add( new Student( "Winja", 4.0 ) );
         masterList.add( new Student( "Waya", 3.5 ) );
         // masterList.add( new Student( "Wanusha", 4.0 ) );
         // masterList.add( new Student( "Woshua", 4.0 ) );
