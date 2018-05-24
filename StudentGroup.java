@@ -47,7 +47,15 @@ public class StudentGroup
     public void addStudent( int i, Student s )
     {
         // make this shit work so that it adds a student if there is nothing at the index and replaces the student if there is a student there
-        group.add( i, s );
+        if(group.size()-1 >= i)
+        {
+            group.set( i, s );
+        }
+        else
+        {
+            group.add( s );
+        }
+          
     }
 
 
