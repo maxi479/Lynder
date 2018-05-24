@@ -69,7 +69,7 @@ public class LynderUI_2
             }
             else
             {
-                model.addElement( stu.toString() );
+                model.addElement( stu.toString() + "      " + "GPA: " + stu.getGPA());
             }
 
         }
@@ -78,11 +78,11 @@ public class LynderUI_2
         list.setSelectionMode( ListSelectionModel.SINGLE_INTERVAL_SELECTION );
         list.setBounds( 50, 50, 100, 50 );
         JScrollPane pane = new JScrollPane( list );
-        pane.setBounds( 50, 50, 100, 50 );
+        pane.setBounds( 50, 50, 150, 50 );
         frame.add( pane );
         final JLabel lblNewLabel = new JLabel(
             "Selected Student Name: " + list.getSelectedValue() );
-        lblNewLabel.setBounds( 80, 80, 200, 100 );
+        lblNewLabel.setBounds( 80, 60, 200, 100 );
         lblNewLabel.setVisible( false );
         frame.add( lblNewLabel );
         final JLabel name = new JLabel( "Your name is " + stud.getName() );
@@ -98,7 +98,7 @@ public class LynderUI_2
             }
         } );
         final JTextField textField = new JTextField();
-        textField.setBounds( 90, 120, 100, 25 );
+        textField.setBounds( 90, 100, 100, 25 );
         frame.add( textField );
         final JButton button = new JButton();
         button.setText( "enter" );
@@ -115,9 +115,10 @@ public class LynderUI_2
                     model.remove( index );
                 System.out.println( name + " " + Integer.parseInt( textField.getText() ) );
                 stud.rateInput( name, Integer.parseInt( textField.getText() ) );
+                textField.setText( "" );
             }
         } );
-        button.setBounds( 95, 150, 100, 50 );
+        button.setBounds( 95, 130, 100, 50 );
         frame.add( button );
         final JButton LastEntry = new JButton();
         LastEntry.setText( "Last Entry" );
