@@ -65,7 +65,7 @@ public class LynderUI_2
         {
             if ( stu.getName().equals( stud.getName() ) )
             {
-
+                stu.rateInput( stu.getName(), 1 );
             }
             else
             {
@@ -98,7 +98,6 @@ public class LynderUI_2
             }
         } );
         final JTextField textField = new JTextField();
-        textField.setText( "enter rating" );
         textField.setBounds( 90, 120, 100, 25 );
         frame.add( textField );
         final JButton button = new JButton();
@@ -110,11 +109,12 @@ public class LynderUI_2
             public void actionPerformed( ActionEvent e )
             {
                 ListSelectionModel selmodel = list.getSelectionModel();
-                String name = (String)list.getSelectedValue();
                 int index = selmodel.getMinSelectionIndex();
+                String name = model.elementAt( index );
                 if ( index >= 0 )
                     model.remove( index );
-                stud.rateInput( name, (int)Integer.parseInt( textField.getText() ) );
+                System.out.println( name + Integer.parseInt( textField.getText() ) );
+                stud.rateInput( name, Integer.parseInt( textField.getText() ) );
             }
         } );
         button.setBounds( 95, 150, 100, 50 );
@@ -127,8 +127,18 @@ public class LynderUI_2
             public void actionPerformed( ActionEvent e )
             {
                 frame.setVisible( false );
-                LynderUI_2 next = new LynderUI_2( Lynder.getMasterList().get( Lynder.iterator() ) );
-                next.main( null );
+                int i = Lynder.iterator();
+                if ( i < Lynder.getMasterList().size() )
+                {
+                    LynderUI_2 next = new LynderUI_2( Lynder.getMasterList().get( i ) );
+                    next.main( null );
+                }
+                else
+                {
+                    Lynder.compilePopularity();
+                    Lynder.makeGroup();
+                }
+
             }
         } );
         frame.add( LastEntry );

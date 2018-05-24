@@ -1,42 +1,64 @@
 import java.util.*;
 
+
 public class StudentGroup
 {
     public ArrayList<Student> group = new ArrayList<Student>();
+
     private boolean completeGroup;
+
     public int size;
+
+
     public StudentGroup()
     {
         completeGroup = false;
         size = Lynder.getGroupSize();
     }
-    
-    public Student getNth(int n)
+
+
+    public Student getNth( int n )
     {
         return group.get( n );
     }
- 
-    public void addStudent(Student s )
+
+
+    public void addStudent( Student s )
     {
         group.add( s );
     }
-    
-    
+
+
     public boolean complete()
-    {       
-        if( group.size() == size)
+    {
+        if ( group.size() == size )
         {
             return true;
         }
         return false;
     }
+
+
     public ArrayList<Student> returnArray()
     {
         return group;
     }
+
+
     public void removeTemp()
     {
-        group.remove( group.size()-1 );
+        group.remove( group.size() - 1 );
+    }
+
+
+    public String toString()
+    {
+        String s = "";
+        for ( Student stud : group )
+        {
+            s = stud.getName() + " ";
+        }
+        return s;
     }
 
 }

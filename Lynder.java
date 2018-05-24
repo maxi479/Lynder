@@ -6,16 +6,15 @@ public class Lynder
 {
     public static ArrayList<Student> masterList = new ArrayList<Student>();// b4
                                                                            // popularity
+    public static HashMap<Integer, String> popularity;// by popularity
 
-    public HashMap<Integer, String> popularity;// by popularity
+    public static HashMap<String, Integer> popularity2;// by name
 
-    public HashMap<String, Integer> popularity2;// by name
+    public static HashMap<String, Student> masterList2 = new HashMap<String, Student>();
 
-    public HashMap<String, Student> masterList2 = new HashMap<String, Student>();
+    public static ArrayList<StudentGroup> finalList = new ArrayList<StudentGroup>();
 
-    public ArrayList<StudentGroup> finalList = new ArrayList<StudentGroup>();
-
-    public Map<Integer, String> treeMap;
+    public static Map<Integer, String> treeMap;
 
     public static int groupSize;
 
@@ -50,7 +49,7 @@ public class Lynder
     // treeMap.putAll( popularity );
     // }
 
-    public String topStudent()
+    public static String topStudent()
     {
         int topPop = 0;
         for ( Map.Entry<Integer, String> s : popularity.entrySet() )
@@ -68,17 +67,16 @@ public class Lynder
     /**
      * creates a hashmap with poparity
      */
-    public void compilePopularity()
+    public static void compilePopularity()
     {
         // this is to make the popularity map
         for ( Student s : masterList ) // for every single student
         {
             int pop = 0;
             String name = s.getName();
-            for ( Student ss : masterList ) // every student's rating of this
-                                            // single student
+            for ( Student ss : masterList ) // every student's rating of this                                            // single student
             {
-                pop += ss.getRating( name ); // adding up all the ratings
+                pop += ss.getRating( name ); // adding up all the ratings                
             }
             popularity.put( pop, name ); // put it into the hashmap
         }
@@ -102,7 +100,7 @@ public class Lynder
     }
 
 
-    public void makeGroup()
+    public static void makeGroup()
     {
         while ( !popularity.isEmpty() )
         {
@@ -143,7 +141,7 @@ public class Lynder
     }
 
 
-    public int groupAvg( StudentGroup sg )
+    public static int groupAvg( StudentGroup sg )
     {
         int sum = 0;
         int size = sg.returnArray().size();
@@ -177,7 +175,7 @@ public class Lynder
      * 
      * @param str
      */
-    public void removeAll( String str )
+    public static void removeAll( String str )
     {
         Student stu = masterList2.get( str );
         int pop = popularity2.get( str );
@@ -236,7 +234,6 @@ public class Lynder
         main.addStudents();
         LynderUI dar = new LynderUI();
         dar.main( args );
-
     }
 
 
@@ -245,35 +242,35 @@ public class Lynder
         masterList.add( new Student( "Washwin", 4.0 ) );
         masterList.add( new Student( "Wandrew", 4.0 ) );
         masterList.add( new Student( "Wames", 6.0 ) );
-        masterList.add( new Student( "Winja", 4.0 ) );
-        masterList.add( new Student( "Waya", 3.5 ) );
-        masterList.add( new Student( "Wanusha", 4.0 ) );
-        masterList.add( new Student( "Woshua", 4.0 ) );
-        masterList.add( new Student( "Wiroki", 3.9 ) );
-        masterList.add( new Student( "Wichard", 3.5 ) );
-        masterList.add( new Student( "Wrish", 2.0 ) );
-        masterList.add( new Student( "Wason", 4.0 ) );
-        masterList.add( new Student( "Wai", 3.8 ) );
-        masterList.add( new Student( "WindianWirl", 3.6 ) );
-        masterList.add( new Student( "Wasta", 3.4 ) );
-        masterList.add( new Student( "Wrace", 3.0 ) );
-        masterList.add( new Student( "Wottem", 1.0 ) );
-        masterList.add( new Student( "Wian", 3.9 ) );
-        masterList.add( new Student( "Warren", 3.9 ) );
-        masterList.add( new Student( "Waxwell", 4.0 ) );
-        masterList.add( new Student( "Wamol", 4.0 ) );
-        masterList.add( new Student( "Warles", 3.8 ) );
-        masterList.add( new Student( "Wansen", 4.0 ) );
-        masterList.add( new Student( "Wason2", 3.0 ) );
-        masterList.add( new Student( "WindianWoy", 3.8 ) );
-        masterList.add( new Student( "WindianWirl2", 3.0 ) );
-        masterList.add( new Student( "Wangela", 3.7 ) );
-        masterList.add( new Student( "WasianWirl", 3.6 ) );
-        masterList.add( new Student( "WasianWirl2", 3.0 ) );
-        masterList.add( new Student( "Lishika", 3.8 ) );
-        masterList.add( new Student( "Lishita", 3.9 ) );
-        masterList.add( new Student( "Illiam", 4.0 ) );
-        masterList.add( new Student( "WindianWirl5", 3.0 ) );
+//        masterList.add( new Student( "Winja", 4.0 ) );
+//        masterList.add( new Student( "Waya", 3.5 ) );
+//        masterList.add( new Student( "Wanusha", 4.0 ) );
+//        masterList.add( new Student( "Woshua", 4.0 ) );
+//        masterList.add( new Student( "Wiroki", 3.9 ) );
+//        masterList.add( new Student( "Wichard", 3.5 ) );
+//        masterList.add( new Student( "Wrish", 2.0 ) );
+//        masterList.add( new Student( "Wason", 4.0 ) );
+//        masterList.add( new Student( "Wai", 3.8 ) );
+//        masterList.add( new Student( "WindianWirl", 3.6 ) );
+//        masterList.add( new Student( "Wasta", 3.4 ) );
+//        masterList.add( new Student( "Wrace", 3.0 ) );
+//        masterList.add( new Student( "Wottem", 1.0 ) );
+//        masterList.add( new Student( "Wian", 3.9 ) );
+//        masterList.add( new Student( "Warren", 3.9 ) );
+//        masterList.add( new Student( "Waxwell", 4.0 ) );
+//        masterList.add( new Student( "Wamol", 4.0 ) );
+//        masterList.add( new Student( "Warles", 3.8 ) );
+//        masterList.add( new Student( "Wansen", 4.0 ) );
+//        masterList.add( new Student( "Wason2", 3.0 ) );
+//        masterList.add( new Student( "WindianWoy", 3.8 ) );
+//        masterList.add( new Student( "WindianWirl2", 3.0 ) );
+//        masterList.add( new Student( "Wangela", 3.7 ) );
+//        masterList.add( new Student( "WasianWirl", 3.6 ) );
+//        masterList.add( new Student( "WasianWirl2", 3.0 ) );
+//        masterList.add( new Student( "Lishika", 3.8 ) );
+//        masterList.add( new Student( "Lishita", 3.9 ) );
+//        masterList.add( new Student( "Illiam", 4.0 ) );
+//        masterList.add( new Student( "WindianWirl5", 3.0 ) );
     }
 
 }

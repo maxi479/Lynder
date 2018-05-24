@@ -31,6 +31,7 @@ public class Student
         rated = false;
         name = "";
         GPA = 0;
+        ratings = new HashMap<String, Integer>();
     }
 
 
@@ -48,6 +49,7 @@ public class Student
         rated = false;
         name = fullName;
         GPA = gradePointAvg;
+        ratings = new HashMap<String, Integer>();
     }
 
 
@@ -66,10 +68,6 @@ public class Student
 
     public void rateInput( String name, int rating )
     {
-        if ( rating < 0 || rating > 5 )
-        {
-            throw new NullPointerException();
-        }
         ratings.put( name, rating );
     }
 
