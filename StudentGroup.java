@@ -77,7 +77,11 @@ public class StudentGroup
 
     public void removeTemp( int i )
     {
-        group.remove( i );
+        if(group.size()> i)
+        {
+            group.remove( i );
+        }
+        
     }
 
 

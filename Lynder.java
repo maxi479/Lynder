@@ -135,7 +135,7 @@ public class Lynder
                 {
                     int avg = 0;
                     name = s.getName();
-                    temp.addStudent( i, s );
+                    temp.addStudent( s );
                     if ( groupAvg( temp ) >= avg )
                     {
                         avg = groupAvg( temp );
