@@ -174,8 +174,12 @@ public class Lynder
         {
             for ( Student st : sg.returnArray() )
             {
-                String stu = st.getName();
-                sum += s.getRating( stu );
+                if ( s.getName() != st.getName() )
+                {
+                    String stu = st.getName();
+                    sum += s.getRating( stu );
+                }
+
             }
         }
         return sum / size;
@@ -273,11 +277,11 @@ public class Lynder
 
     public void addStudents()
     {
-        masterList.add( new Student( "Washwin", 4.0 ) );
+        // masterList.add( new Student( "Washwin", 4.0 ) );
         // masterList.add( new Student( "Wandrew", 4.0 ) );
-        masterList.add( new Student( "Wames", 4.0 ) );
+        // masterList.add( new Student( "Wames", 4.0 ) );
         // masterList.add( new Student( "Winja", 4.0 ) );
-        masterList.add( new Student( "Waya", 3.5 ) );
+        // masterList.add( new Student( "Waya", 3.5 ) );
         // masterList.add( new Student( "Wanusha", 4.0 ) );
         // masterList.add( new Student( "Woshua", 4.0 ) );
         // masterList.add( new Student( "Wiroki", 3.9 ) );
