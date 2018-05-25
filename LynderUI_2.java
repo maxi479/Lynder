@@ -82,7 +82,7 @@ public class LynderUI_2
         frame.add( pane );
         final JLabel lblNewLabel = new JLabel(
             "Selected Student Name: " + list.getSelectedValue() );
-        lblNewLabel.setBounds( 80, 60, 200, 100 );
+        lblNewLabel.setBounds( 200, 60, 400, 100 );
         lblNewLabel.setVisible( false );
         frame.add( lblNewLabel );
         final JLabel name = new JLabel( "Your name is " + stud.getName() );
@@ -97,7 +97,7 @@ public class LynderUI_2
                 lblNewLabel.setVisible( true );
             }
         } );
-        final JTextField textField = new JTextField();
+        final JTextField textField = new JTextField("rating");
         textField.setBounds( 90, 100, 100, 25 );
         frame.add( textField );
         final JButton button = new JButton();

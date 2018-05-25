@@ -195,9 +195,15 @@ public class Lynder
         for ( StudentGroup s : finalList )
         {
             System.out.print( "Group Number #" + groupNum + ": (" );
-            for ( Student stu : s.returnArray() )
+            // for ( Student stu : s.returnArray() )
+            for ( int i = 0; i < s.returnArray().size(); i++ )
             {
-                System.out.print( stu.getName() + ", " );
+                if ( i == s.returnArray().size() - 1 )
+                {
+                    System.out.print( s.returnArray().get( i ) );
+                }
+                else
+                    System.out.print( s.returnArray().get( i ) + ", " );
             }
             System.out.print( ")" );
             System.out.println();
