@@ -194,7 +194,7 @@ public class Lynder
         int groupNum = 0;
         for ( StudentGroup s : finalList )
         {
-            System.out.print( "Group Number #" + groupNum + ": (" );
+            System.out.print( "Group Number #" + (groupNum + 1) + ": (" );
             for ( Student stu : s.returnArray() )
             {
                 System.out.print( stu.getName() + ", " );
