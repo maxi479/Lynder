@@ -66,6 +66,11 @@ public class Student
     }
 
 
+    /**
+     * input rating for a particular student 
+     * @param name string
+     * @param rating 1-5
+     */
     public void rateInput( String name, int rating )
     {
         ratings.put( name, rating );
@@ -91,6 +96,10 @@ public class Student
     }
 
 
+    /**
+     * after been added to a group remove them from the lsit of ratings
+     * @param name
+     */
     public void remove( String name )
     {
         ratings.remove( name );

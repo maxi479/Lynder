@@ -10,20 +10,23 @@ public class Lynder
     public static HashMap<Integer, String> popularity = new HashMap<Integer, String>();// by
                                                                                        // popularity
 
-    public static HashMap<String, Integer> popularity2 = new HashMap<String, Integer>();
+    public static HashMap<String, Integer> popularity2 = new HashMap<String, Integer>();//basically popularity but swapped values
 
-    public static HashMap<String, Student> masterList2 = new HashMap<String, Student>();
+    public static HashMap<String, Student> masterList2 = new HashMap<String, Student>(); //masterlist but in hashmap form
 
-    public static ArrayList<StudentGroup> finalList = new ArrayList<StudentGroup>();
+    public static ArrayList<StudentGroup> finalList = new ArrayList<StudentGroup>(); //final list of goups
 
-    public static Map<Integer, String> treeMap;
+    public static Map<Integer, String> treeMap; // don't really need sorry darren
 
     public static int groupSize;
 
     public static int i = 1;
 
 
-    public Lynder( int size )
+    /**
+     * @param size number of ppl per group
+     */
+    public Lynder( int size ) 
     {
         groupSize = size;
     }
@@ -52,9 +55,9 @@ public class Lynder
     // }
 
     /**
-     * the student with the highest popularity
+     * the student with the highest popularity in popularity
      * 
-     * @return the student with the highest popularity
+     * @return name of studnet
      */
     public static String topStudent()
     {
@@ -72,7 +75,7 @@ public class Lynder
 
 
     /**
-     * basically updates all maps
+     * clears all maps and updates with masterlist
      */
     public static void compilePopularity()
     {
@@ -118,42 +121,42 @@ public class Lynder
      */
     public static void makeGroup()
     {
-        while ( !popularity.isEmpty() )
+        while ( !popularity.isEmpty() )//the entire class
         {
-            String str = topStudent();
+            String str = topStudent(); // get the topstudent
             Student top = masterList2.get( str );
-            StudentGroup temp = new StudentGroup();
-            StudentGroup group = new StudentGroup();
-            temp.addStudent( 0, top );
+            StudentGroup temp = new StudentGroup();//tempgroup to average
+            StudentGroup group = new StudentGroup();//final group to put into finallist
+            temp.addStudent( 0, top ); //first add the top student to the group
             group.addStudent( 0, top );
-            removeAll( str );
-            for ( int i = 1; i < groupSize; i++ )
+            removeAll( str ); // remove every instance of the top student so he doesnt get added twice
+            for ( int i = 1; i < groupSize; i++ )// adds this many ppl to create a group
             {
 
                 String name = "";
-                for ( Student s : masterList )
+                for ( Student s : masterList ) // trying out different student
                 {
                     int avg = 0;
                     name = s.getName();
-                    temp.addStudent( s );
-                    if ( groupAvg( temp ) >= avg )
+                    temp.addStudent( s );// trys another sutdent
+                    if ( groupAvg( temp ) >= avg )//if the students are more compatable they are added
                     {
-                        avg = groupAvg( temp );
-                        temp.removeTemp( i );
-                        group.addStudent( i, s );
+                        avg = groupAvg( temp );//updates the highest averge
+                        temp.removeTemp( i ); //clears tmep for another attemps
+                        group.addStudent( i, s ); //adds student to the final group
 
                     }
                     else
                     {
-                        temp.removeTemp( i );
+                        temp.removeTemp( i );// removes the student to try again
                     }
                 }
 
-                removeAll( name );
+                removeAll( name );// after the studnt is added they are wiped from every where
 
             }
 
-            finalList.add( group );
+            finalList.add( group );// add the finished group
         }
 
     }
