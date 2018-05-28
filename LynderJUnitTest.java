@@ -7,6 +7,7 @@ import junit.framework.TestCase;
 public class LynderJUnitTest extends TestCase
 {
 
+    // Lynder tests
     @Test
     public void testLynderConstructor()
     {
@@ -41,15 +42,16 @@ public class LynderJUnitTest extends TestCase
     }
 
 
-     @SuppressWarnings("static-access")
-     @Test
-     public void testMakeGroup()
-     {
-     Lynder lyn = new Lynder( 2 );
-     Lynder lyn2 = lyn;
-     lyn.makeGroup();
-     assertEquals( lyn, lyn2 );
-     }
+    @SuppressWarnings("static-access")
+    @Test
+    public void testMakeGroup()
+    {
+        Lynder lyn = new Lynder( 2 );
+        Lynder lyn2 = lyn;
+        lyn.makeGroup();
+        assertEquals( lyn, lyn2 );
+    }
+
 
     @SuppressWarnings("static-access")
     @Test
@@ -193,5 +195,132 @@ public class LynderJUnitTest extends TestCase
         lyn.iterator();
         // System.out.println( lyn.i );
         assertEquals( 2, lyn.i );
+    }
+
+
+    // Student tests
+    @Test
+    public void testStudentConstructorNoParams()
+    {
+        Student denver = new Student();
+        assertNotNull( denver );
+    }
+
+
+    @Test
+    public void testStudentConstructorParams()
+    {
+        Student denver = new Student( "Denver", 4.0 );
+        assertNotNull( denver );
+    }
+
+
+    @Test
+    public void testUpdateMap()
+    {
+        Student denver = new Student( "Denver", 4.0 );
+        denver.updateMap();
+        // System.out.println(denver.ratings);
+        assertTrue( denver.ratings.size() == 0 );
+    }
+
+
+    @Test
+    public void testRateInput()
+    {
+        Student denver = new Student( "Denver", 4.0 );
+        Student anson = new Student( "Anson", 1.0 );
+        denver.rateInput( "Anson", 5 );
+        anson.rateInput( "Denver", 5 );
+        // System.out.println( denver.ratings );
+        assertTrue( !denver.ratings.isEmpty() );
+    }
+
+
+    @Test
+    public void testGetRating()
+    {
+        Student denver = new Student( "Denver", 4.0 );
+        Student anson = new Student( "Anson", 1.0 );
+        denver.rateInput( "Anson", 5 );
+        anson.rateInput( "Denver", 5 );
+        // System.out.println( denver.getRating( "Anson" ) );
+        assertEquals( 5, denver.getRating( "Anson" ) );
+    }
+
+
+    @Test
+    public void testRemove()
+    {
+        Student denver = new Student( "Denver", 4.0 );
+        Student anson = new Student( "Anson", 1.0 );
+        denver.rateInput( "Anson", 5 );
+        anson.rateInput( "Denver", 5 );
+        denver.remove( "Anson" );
+        // System.out.println( denver.ratings );
+        assertTrue( denver.ratings.isEmpty() );
+    }
+
+
+    @Test
+    public void testRatedStudents()
+    {
+        Student denver = new Student( "Denver", 4.0 );
+        Student anson = new Student( "Anson", 1.0 );
+        denver.rateInput( "Anson", 5 );
+        anson.rateInput( "Denver", 5 );
+        denver.ratedStudents();
+        // System.out.println( denver.getRated() );
+        assertEquals( true, denver.getRated() );
+    }
+
+
+    @Test
+    public void testGetName()
+    {
+        Student denver = new Student( "Denver", 4.0 );
+        // System.out.println( denver.getName() );
+        assertEquals( "Denver", denver.getName() );
+    }
+
+
+    @Test
+    public void testGetPopularity2()
+    {
+        Student denver = new Student( "Denver", 4.0 );
+        // System.out.println( denver.getPopularity() );
+        assertEquals( 0.0, denver.getPopularity() );
+    }
+
+
+    @Test
+    public void testGetRated()
+    {
+        Student denver = new Student( "Denver", 4.0 );
+        assertEquals( false, denver.getRated() );
+    }
+
+
+    @Test
+    public void testReturnArray()
+    {
+        Student denver = new Student( "Denver", 4.0 );
+        assertEquals( denver.ratings, denver.returnArray() );
+    }
+
+
+    @Test
+    public void testGetGPA()
+    {
+        Student denver = new Student( "Denver", 4.0 );
+        assertEquals( 4.0, denver.getGPA() );
+    }
+
+
+    @Test
+    public void testToString()
+    {
+        Student denver = new Student( "Denver", 4.0 );
+        assertEquals( "Denver", denver.toString() );
     }
 }

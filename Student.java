@@ -4,11 +4,9 @@ import java.util.*;
 public class Student
 {
     // total added score from all other students
-    @SuppressWarnings("unused")
     private double popularity;
 
     // whether or not he has rated every other student in the class
-    @SuppressWarnings("unused")
     private boolean rated;
 
     // name of student
@@ -102,7 +100,7 @@ public class Student
 
 
     /**
-     * after been added to a group remove them from the lsit of ratings
+     * after been added to a group remove them from the list of ratings
      * 
      * @param name
      */
@@ -131,6 +129,18 @@ public class Student
     {
 
         return name;
+    }
+
+
+    public double getPopularity()
+    {
+        return popularity;
+    }
+
+
+    public boolean getRated()
+    {
+        return rated;
     }
 
 
