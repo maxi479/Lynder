@@ -4,9 +4,11 @@ import java.util.*;
 public class Student
 {
     // total added score from all other students
+    @SuppressWarnings("unused")
     private double popularity;
 
     // whether or not he has rated every other student in the class
+    @SuppressWarnings("unused")
     private boolean rated;
 
     // name of student

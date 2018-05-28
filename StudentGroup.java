@@ -5,6 +5,7 @@ public class StudentGroup
 {
     public ArrayList<Student> group = new ArrayList<Student>();
 
+    @SuppressWarnings("unused")
     private boolean completeGroup;
 
     public int size;

@@ -1,5 +1,4 @@
 import java.awt.EventQueue;
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
@@ -10,8 +9,10 @@ public class LynderUI_2
 
     private JFrame frame;
 
+    @SuppressWarnings("rawtypes")
     private JList list;
 
+    @SuppressWarnings("unused")
     private int index;
 
     private static Student stud;
@@ -125,6 +126,7 @@ public class LynderUI_2
         LastEntry.setBounds( 200, 40, 150, 30 );
         LastEntry.addActionListener( new ActionListener()
         {
+            @SuppressWarnings("static-access")
             public void actionPerformed( ActionEvent e )
             {
                 frame.setVisible( false );

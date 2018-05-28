@@ -75,6 +75,7 @@ public class Start_UI
         frame.getContentPane().add( btnEnter );
         btnEnter.addActionListener( new ActionListener()
         {
+            @SuppressWarnings("static-access")
             public void actionPerformed( ActionEvent e )
             {
                 Lynder lynd = new Lynder( Integer.parseInt( textField.getText() ) );

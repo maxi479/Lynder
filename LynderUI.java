@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 
+@SuppressWarnings("serial")
 public class LynderUI extends Frame implements ActionListener
 {
 
@@ -115,6 +116,7 @@ public class LynderUI extends Frame implements ActionListener
         frame.getContentPane().add( btnNewButton1 );
         btnNewButton1.addActionListener( new ActionListener()
         {
+            @SuppressWarnings("static-access")
             public void actionPerformed( ActionEvent e )
             {
                 frame.setVisible( false );
