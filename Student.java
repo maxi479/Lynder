@@ -67,9 +67,12 @@ public class Student
 
 
     /**
-     * input rating for a particular student 
-     * @param name string
-     * @param rating 1-5
+     * input rating for a particular student
+     * 
+     * @param name
+     *            string
+     * @param rating
+     *            1-5
      */
     public void rateInput( String name, int rating )
     {
@@ -85,19 +88,20 @@ public class Student
      */
     public int getRating( String name )
     {
-        if(!ratings.containsKey( name ))
+        if ( !ratings.containsKey( name ) )
         {
-        return 0;
+            return 0;
         }
         else
         {
-            return ratings.get(name);
+            return ratings.get( name );
         }
     }
 
 
     /**
      * after been added to a group remove them from the lsit of ratings
+     * 
      * @param name
      */
     public void remove( String name )

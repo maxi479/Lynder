@@ -140,54 +140,58 @@ public class LynderJUnitTest extends TestCase
         Lynder lyn = new Lynder( 2 );
         Student denver = new Student( "Denver", 1.0 );
         lyn.addNewStud( denver );
-//        System.out.println( lyn.getMasterList() );
+        // System.out.println( lyn.getMasterList() );
         assertTrue( lyn.masterList.contains( denver ) );
         lyn.masterList.remove( denver );
     }
-    
+
+
     @SuppressWarnings("static-access")
     @Test
     public void testGetMasterList()
     {
         Lynder lyn = new Lynder( 2 );
-//        System.out.println( lyn.getMasterList());
-        Student denver = new Student("Denver", 4.0);
+        // System.out.println( lyn.getMasterList());
+        Student denver = new Student( "Denver", 4.0 );
         lyn.masterList.add( denver );
-        assertTrue(lyn.getMasterList().contains( denver ));
+        assertTrue( lyn.getMasterList().contains( denver ) );
         lyn.masterList.remove( denver );
     }
-    
+
+
     @SuppressWarnings("static-access")
     @Test
     public void testGetPopularityList()
     {
         Lynder lyn = new Lynder( 2 );
         lyn.popularity.put( 0, "Denver" );
-//        System.out.println( lyn.popularity );
-        assertTrue(lyn.getPopularityList().get( 0 ).equals( "Denver" ));
+        // System.out.println( lyn.popularity );
+        assertTrue( lyn.getPopularityList().get( 0 ).equals( "Denver" ) );
     }
-    
+
+
     @SuppressWarnings("static-access")
     @Test
     public void testGetPopularity()
     {
         Lynder lyn = new Lynder( 2 );
-        Student denver = new Student("Denver", 4.0);
-        Student anson = new Student("Anson", 1.0);
+        Student denver = new Student( "Denver", 4.0 );
+        Student anson = new Student( "Anson", 1.0 );
         denver.rateInput( "Anson", 5 );
         anson.rateInput( "Denver", 5 );
         lyn.popularity2.put( "Denver", 5 );
-//        System.out.println( lyn.getPopularity( "Denver" ) );
-        assertEquals(5, lyn.getPopularity( "Denver" ));
+        // System.out.println( lyn.getPopularity( "Denver" ) );
+        assertEquals( 5, lyn.getPopularity( "Denver" ) );
     }
-    
+
+
     @SuppressWarnings("static-access")
     @Test
     public void testIterator()
     {
         Lynder lyn = new Lynder( 2 );
         lyn.iterator();
-//        System.out.println( lyn.i );
-        assertEquals(2, lyn.i);
+        // System.out.println( lyn.i );
+        assertEquals( 2, lyn.i );
     }
 }

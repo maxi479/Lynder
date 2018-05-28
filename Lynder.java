@@ -10,13 +10,25 @@ public class Lynder
     public static HashMap<Integer, String> popularity = new HashMap<Integer, String>();// by
                                                                                        // popularity
 
-    public static HashMap<String, Integer> popularity2 = new HashMap<String, Integer>();//basically popularity but swapped values
+    public static HashMap<String, Integer> popularity2 = new HashMap<String, Integer>();// basically
+                                                                                        // popularity
+                                                                                        // but
+                                                                                        // swapped
+                                                                                        // values
 
-    public static HashMap<String, Student> masterList2 = new HashMap<String, Student>(); //masterlist but in hashmap form
+    public static HashMap<String, Student> masterList2 = new HashMap<String, Student>(); // masterlist
+                                                                                         // but
+                                                                                         // in
+                                                                                         // hashmap
+                                                                                         // form
 
-    public static ArrayList<StudentGroup> finalList = new ArrayList<StudentGroup>(); //final list of goups
+    public static ArrayList<StudentGroup> finalList = new ArrayList<StudentGroup>(); // final
+                                                                                     // list
+                                                                                     // of
+                                                                                     // goups
 
-    public static Map<Integer, String> treeMap; // don't really need sorry darren
+    public static Map<Integer, String> treeMap; // don't really need sorry
+                                                // darren
 
     public static int groupSize;
 
@@ -24,9 +36,10 @@ public class Lynder
 
 
     /**
-     * @param size number of ppl per group
+     * @param size
+     *            number of ppl per group
      */
-    public Lynder( int size ) 
+    public Lynder( int size )
     {
         groupSize = size;
     }
@@ -99,16 +112,19 @@ public class Lynder
      */
     public static void makeGroup()
     {
-        while ( !popularity.isEmpty() )//the entire class
+        while ( !popularity.isEmpty() )// the entire class
         {
             String str = topStudent(); // get the topstudent
             Student top = masterList2.get( str );
-            StudentGroup temp = new StudentGroup();//tempgroup to average
-            StudentGroup group = new StudentGroup();//final group to put into finallist
-            temp.addStudent( 0, top ); //first add the top student to the group
+            StudentGroup temp = new StudentGroup();// tempgroup to average
+            StudentGroup group = new StudentGroup();// final group to put into
+                                                    // finallist
+            temp.addStudent( 0, top ); // first add the top student to the group
             group.addStudent( 0, top );
-            removeAll( str ); // remove every instance of the top student so he doesnt get added twice
-            for ( int i = 1; i < groupSize; i++ )// adds this many ppl to create a group
+            removeAll( str ); // remove every instance of the top student so he
+                              // doesnt get added twice
+            for ( int i = 1; i < groupSize; i++ )// adds this many ppl to create
+                                                 // a group
             {
 
                 String name = "";
@@ -117,11 +133,13 @@ public class Lynder
                     double avg = 0;
                     name = s.getName();
                     temp.addStudent( s );// trys another sutdent
-                    if ( groupAvg( temp ) >= avg )//if the students are more compatable they are added
+                    if ( groupAvg( temp ) >= avg )// if the students are more
+                                                  // compatable they are added
                     {
-                        avg = groupAvg( temp );//updates the highest averge
-                        temp.removeTemp( i ); //clears tmep for another attemps
-                        group.addStudent( i, s ); //adds student to the final group
+                        avg = groupAvg( temp );// updates the highest averge
+                        temp.removeTemp( i ); // clears tmep for another attemps
+                        group.addStudent( i, s ); // adds student to the final
+                                                  // group
 
                     }
                     else
@@ -130,7 +148,8 @@ public class Lynder
                     }
                 }
 
-                removeAll( name );// after the studnt is added they are wiped from every where
+                removeAll( name );// after the studnt is added they are wiped
+                                  // from every where
 
             }
 
@@ -141,8 +160,8 @@ public class Lynder
 
 
     /**
-     * returns the average likeness for each group the higher the number the more
-     * compatible they are
+     * returns the average likeness for each group the higher the number the
+     * more compatible they are
      * 
      * @param sg
      * @return
@@ -260,6 +279,7 @@ public class Lynder
         LynderUI dar = new LynderUI();
         dar.main( args );
     }
+
 
     /**
      * for testing purposes only
