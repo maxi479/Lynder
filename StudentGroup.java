@@ -93,7 +93,7 @@ public class StudentGroup
         String s = "";
         for ( Student stud : group )
         {
-            s = stud.getName() + " ";
+            s += stud.getName() + " ";
         }
         return s;
     }

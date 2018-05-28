@@ -323,4 +323,89 @@ public class LynderJUnitTest extends TestCase
         Student denver = new Student( "Denver", 4.0 );
         assertEquals( "Denver", denver.toString() );
     }
+    
+    // StudentGroup tests
+    @Test
+    public void testStudentGroupConstructor()
+    {
+        StudentGroup sg = new StudentGroup();
+        assertNotNull(sg);
+    }
+    
+    @Test
+    public void testGetNth()
+    {
+        StudentGroup sg = new StudentGroup();
+        Student denver = new Student("Denver", 4.0);
+        sg.addStudent( denver );
+//        System.out.println(sg.getNth( 0 ));
+        assertEquals(denver, sg.getNth( 0 ));
+    }
+    
+    @Test
+    public void testAddStudentNoParams()
+    {
+        StudentGroup sg = new StudentGroup();
+        Student denver = new Student("Denver", 4.0);
+        sg.addStudent( denver );
+//        System.out.println( sg.group );
+        assertTrue(sg.group.contains( denver ));
+    }
+    
+    @Test
+    public void testAddStudentParams()
+    {
+        StudentGroup sg = new StudentGroup();
+        Student denver = new Student("Denver", 4.0);
+        Student anson = new Student("Anson", 1.0);
+        sg.addStudent( 0, denver );
+        sg.addStudent( 0, anson );
+//        System.out.println( sg.group );
+        assertEquals(anson, sg.group.get( 0 ));
+    }
+    
+    @Test
+    public void testComplete()
+    {
+        @SuppressWarnings("unused")
+        Lynder lyn = new Lynder ( 2 );
+        StudentGroup sg = new StudentGroup();
+        Student denver = new Student("Denver", 4.0);
+        Student anson = new Student("Anson", 1.0);
+        sg.addStudent( denver );
+        sg.addStudent( anson );
+//        System.out.println( sg.size );
+        assertEquals(true, sg.complete());
+    }
+    
+    @Test
+    public void testReturnArray2()
+    {
+        StudentGroup sg = new StudentGroup();
+        assertEquals(sg.group, sg.returnArray());
+    }
+    
+    @Test
+    public void testRemoveTemp()
+    {
+        StudentGroup sg = new StudentGroup();
+        Student denver = new Student("Denver", 4.0);
+        sg.addStudent( denver );
+        sg.removeTemp( 0 );
+//        System.out.println( sg.group );
+        assertTrue(sg.group.size() == 0);
+    }
+    
+    @Test
+    public void testToString2()
+    {
+        StudentGroup sg = new StudentGroup();
+        Student denver = new Student("Denver", 4.0);
+        Student anson = new Student("Anson", 1.0);
+        sg.addStudent( denver );
+        sg.addStudent( anson );
+//        System.out.println( sg.group );
+//        System.out.println( sg.toString() );
+        assertEquals("Denver Anson ", sg.toString());
+    }
 }
