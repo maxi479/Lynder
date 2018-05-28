@@ -29,28 +29,6 @@ public class Lynder
     }
 
 
-    // SORRY DARREN DONT NEED UR CODE
-    // public void sortPopularity()
-    // {
-    // Map<Integer, String> treeMap = new TreeMap<Integer, String>( new
-    // Comparator<Integer>()
-    // {
-    //
-    // @Override
-    // public int compare( Integer o1, Integer o2 )
-    // {
-    // return o2.compareTo( o1 );
-    // }
-    //
-    // } );
-    //
-    // /*
-    // * For Java 8, try this lambda Map<Integer, String> treeMap = new
-    // * TreeMap<>( (Comparator<Integer>) (o1, o2) -> o2.compareTo(o1) );
-    // */
-    // treeMap.putAll( popularity );
-    // }
-
     /**
      * the student with the highest popularity
      * 
@@ -133,7 +111,7 @@ public class Lynder
                 String name = "";
                 for ( Student s : masterList )
                 {
-                    int avg = 0;
+                    double avg = 0;
                     name = s.getName();
                     temp.addStudent( s );
                     if ( groupAvg( temp ) >= avg )
@@ -160,15 +138,15 @@ public class Lynder
 
 
     /**
-     * returns the average likness for each group the higer the number the more
-     * compatable they are
+     * returns the average likeness for each group the higher the number the more
+     * compatible they are
      * 
      * @param sg
      * @return
      */
-    public static int groupAvg( StudentGroup sg )
+    public static double groupAvg( StudentGroup sg )
     {
-        int sum = 0;
+        double sum = 0;
         int size = sg.returnArray().size();
         for ( Student s : sg.returnArray() )
         {
@@ -280,7 +258,9 @@ public class Lynder
         dar.main( args );
     }
 
-
+    /**
+     * for testing purposes only
+     */
     public void addStudents()
     {
         // masterList.add( new Student( "Washwin", 4.0 ) );
