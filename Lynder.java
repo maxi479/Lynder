@@ -4,29 +4,22 @@ import java.util.*;
 // this will be the classroom class
 public class Lynder
 {
-    public static ArrayList<Student> masterList = new ArrayList<Student>();// b4
-                                                                           // popularity
+    // list of students
+    public static ArrayList<Student> masterList = new ArrayList<Student>();
 
-    public static HashMap<Integer, String> popularity = new HashMap<Integer, String>();// by
-                                                                                       // popularity
+    // by popularity
+    public static HashMap<Integer, String> popularity = new HashMap<Integer, String>();
 
-    public static HashMap<String, Integer> popularity2 = new HashMap<String, Integer>();// basically
-                                                                                        // popularity
-                                                                                        // but
-                                                                                        // swapped
-                                                                                        // values
+    // basically popularity but swapped values
+    public static HashMap<String, Integer> popularity2 = new HashMap<String, Integer>();
 
-    public static HashMap<String, Student> masterList2 = new HashMap<String, Student>(); // masterlist
-                                                                                         // but
-                                                                                         // in
-                                                                                         // hashmap
-                                                                                         // form
+    // masterlist but hashmap form
+    public static HashMap<String, Student> masterList2 = new HashMap<String, Student>();
 
-    public static ArrayList<StudentGroup> finalList = new ArrayList<StudentGroup>(); // final
-                                                                                     // list
-                                                                                     // of
-                                                                                     // goups
+    // final list of groups
+    public static ArrayList<StudentGroup> finalList = new ArrayList<StudentGroup>();
 
+    // dont need this
     public static Map<Integer, String> treeMap; // don't really need sorry
                                                 // darren
 
