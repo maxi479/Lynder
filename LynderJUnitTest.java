@@ -41,15 +41,15 @@ public class LynderJUnitTest extends TestCase
     }
 
 
-    // @SuppressWarnings("static-access")
-    // @Test
-    // public void testMakeGroup()
-    // {
-    // Lynder lyn = new Lynder( 2 );
-    // Lynder lyn2 = lyn;
-    // lyn.makeGroup();
-    // assertEquals( lyn, lyn2 );
-    // }
+     @SuppressWarnings("static-access")
+     @Test
+     public void testMakeGroup()
+     {
+     Lynder lyn = new Lynder( 2 );
+     Lynder lyn2 = lyn;
+     lyn.makeGroup();
+     assertEquals( lyn, lyn2 );
+     }
 
     @SuppressWarnings("static-access")
     @Test
