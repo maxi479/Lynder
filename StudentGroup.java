@@ -33,6 +33,10 @@ public class StudentGroup
     }
 
 
+    /**
+     * add student to the group
+     * @param s
+     */
     public void addStudent( Student s )
     {
         group.add( s );
@@ -62,6 +66,10 @@ public class StudentGroup
     }
 
 
+    /**
+     * we dont need this
+     * @return true or false
+     */
     public boolean complete()
     {
         if ( group.size() == size )
@@ -72,12 +80,20 @@ public class StudentGroup
     }
 
 
+    /**
+     * returns final array
+     * @return group
+     */
     public ArrayList<Student> returnArray()
     {
         return group;
     }
 
 
+    /**
+     * remove person i in the student group
+     * @param i
+     */
     public void removeTemp( int i )
     {
         if ( group.size() > i )
@@ -88,6 +104,9 @@ public class StudentGroup
     }
 
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     public String toString()
     {
         String s = "";
