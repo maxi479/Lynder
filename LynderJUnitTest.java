@@ -8,6 +8,10 @@ public class LynderJUnitTest extends TestCase
 {
 
     // Lynder tests
+    /**
+     * 
+     * Tests Lynder's contructor.
+     */
     @Test
     public void testLynderConstructor()
     {
@@ -15,7 +19,10 @@ public class LynderJUnitTest extends TestCase
         assertNotNull( lyn );
     }
 
-
+    /**
+     * 
+     * Tests Lynder's topStudent method.
+     */
     @SuppressWarnings("static-access")
     @Test
     public void testTopStudent()
@@ -27,6 +34,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Lynder's compilePopularity method.
+     */
     @SuppressWarnings("static-access")
     @Test
     public void testCompilePopularity()
@@ -42,6 +53,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Lynder's makeGroup method.
+     */
     @SuppressWarnings("static-access")
     @Test
     public void testMakeGroup()
@@ -53,6 +68,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Lynder's groupAvg method.
+     */
     @SuppressWarnings("static-access")
     @Test
     public void testGroupAvg()
@@ -90,6 +109,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Lynder's print method.
+     */
     @SuppressWarnings("static-access")
     @Test
     public void testPrint()
@@ -112,6 +135,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Lynder's removeAll method.
+     */
     @SuppressWarnings("static-access")
     @Test
     public void testRemoveAll()
@@ -126,6 +153,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Lynder's getGroupSize method.
+     */
     @SuppressWarnings("static-access")
     @Test
     public void testGetGroupSize()
@@ -135,6 +166,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Lynder's addNewStud method.
+     */
     @SuppressWarnings("static-access")
     @Test
     public void testAddNewStud()
@@ -148,6 +183,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Lynder's getMasterList method.
+     */
     @SuppressWarnings("static-access")
     @Test
     public void testGetMasterList()
@@ -161,6 +200,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Lynder's getPopularityList method.
+     */
     @SuppressWarnings("static-access")
     @Test
     public void testGetPopularityList()
@@ -172,6 +215,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Lynder's getPopularity method.
+     */
     @SuppressWarnings("static-access")
     @Test
     public void testGetPopularity()
@@ -187,6 +234,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests LYnder's iterator method.
+     */
     @SuppressWarnings("static-access")
     @Test
     public void testIterator()
@@ -199,6 +250,10 @@ public class LynderJUnitTest extends TestCase
 
 
     // Student tests
+    /**
+     * 
+     * Tests Student's no parameter constructor.
+     */
     @Test
     public void testStudentConstructorNoParams()
     {
@@ -207,6 +262,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Student's parameter contructor.
+     */
     @Test
     public void testStudentConstructorParams()
     {
@@ -215,6 +274,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Student's updateMap method.
+     */
     @Test
     public void testUpdateMap()
     {
@@ -225,6 +288,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Student's rateInput method.
+     */
     @Test
     public void testRateInput()
     {
@@ -237,6 +304,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Student's getRating method.
+     */
     @Test
     public void testGetRating()
     {
@@ -249,6 +320,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Student's remove method.
+     */
     @Test
     public void testRemove()
     {
@@ -262,6 +337,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Student's ratedStduents method.
+     */
     @Test
     public void testRatedStudents()
     {
@@ -275,6 +354,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Student's return name method.
+     */
     @Test
     public void testGetName()
     {
@@ -284,6 +367,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Student's getPopularity method.
+     */
     @Test
     public void testGetPopularity2()
     {
@@ -293,6 +380,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Student's getRated method.
+     */
     @Test
     public void testGetRated()
     {
@@ -301,6 +392,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Student's returnArray method.
+     */
     @Test
     public void testReturnArray()
     {
@@ -309,6 +404,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Student's getGPA method.
+     */
     @Test
     public void testGetGPA()
     {
@@ -317,6 +416,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests Student's toString method.
+     */
     @Test
     public void testToString()
     {
@@ -326,6 +429,10 @@ public class LynderJUnitTest extends TestCase
 
 
     // StudentGroup tests
+    /**
+     * 
+     * Tests StudentGroup's studentGroupConstructor method.
+     */
     @Test
     public void testStudentGroupConstructor()
     {
@@ -334,6 +441,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests StudentGroup's getNth method.
+     */
     @Test
     public void testGetNth()
     {
@@ -345,6 +456,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests StudentGroup's no parameter addStudent method.
+     */
     @Test
     public void testAddStudentNoParams()
     {
@@ -356,6 +471,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests StudentGroup's parameter addStudent method.
+     */
     @Test
     public void testAddStudentParams()
     {
@@ -369,6 +488,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests StudentGroup's complete method.
+     */
     @Test
     public void testComplete()
     {
@@ -384,6 +507,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests StudentGroup's returnArray method.
+     */
     @Test
     public void testReturnArray2()
     {
@@ -392,6 +519,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests StudentGroup's removeTemp method.
+     */
     @Test
     public void testRemoveTemp()
     {
@@ -404,6 +535,10 @@ public class LynderJUnitTest extends TestCase
     }
 
 
+    /**
+     * 
+     * Tests StudentGroup's toString method.
+     */
     @Test
     public void testToString2()
     {
