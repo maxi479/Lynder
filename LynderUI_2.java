@@ -77,7 +77,7 @@ public class LynderUI_2
         list = new JList<String>( model );
         list.setVisibleRowCount( model.size() );
         list.setSelectionMode( ListSelectionModel.SINGLE_INTERVAL_SELECTION );
-        list.setBounds( 50, 50, 100, 50 );
+        list.setBounds( 50, 50, 100, 100 );
         JScrollPane pane = new JScrollPane( list );
         pane.setBounds( 50, 50, 150, 50 );
         frame.add( pane );
