@@ -69,6 +69,10 @@ public class Start_UI
         textField.setBounds( 246, 89, 130, 45 );
         frame.getContentPane().add( textField );
         textField.setColumns( 10 );
+        final JLabel lblOK = new JLabel( "You have not entered a group size!" );
+        lblOK.setBounds( 150, 130, 300, 45 );
+        lblOK.setVisible( false );
+        frame.getContentPane().add( lblOK );
 
         JButton btnEnter = new JButton( "Enter!" );
         btnEnter.setBounds( 154, 186, 117, 29 );
@@ -78,8 +82,16 @@ public class Start_UI
             @SuppressWarnings("static-access")
             public void actionPerformed( ActionEvent e )
             {
-                Lynder lynd = new Lynder( Integer.parseInt( textField.getText() ) );
-                lynd.main( null );
+                try
+                {
+                    Lynder lynd = new Lynder( Integer.parseInt( textField.getText() ) );
+                    lynd.main( null );
+                }
+                catch ( NumberFormatException a )
+                {
+                    lblOK.setVisible( true );
+                }
+
             }
         } );
         ;

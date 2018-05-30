@@ -58,7 +58,7 @@ public class LynderUI_2
     {
 
         frame = new JFrame();
-        frame.setBounds( 100, 100, 450, 300 );
+        frame.setBounds( 300, 300, 600, 600 );
         frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         frame.getContentPane().setLayout( null );
         final DefaultListModel<String> model = new DefaultListModel<String>();
@@ -70,7 +70,7 @@ public class LynderUI_2
             }
             else
             {
-                model.addElement( stu.toString() + "      " + "GPA: " + stu.getGPA());
+                model.addElement( stu.toString() + "      " + "GPA: " + stu.getGPA() );
             }
 
         }
@@ -87,7 +87,7 @@ public class LynderUI_2
         lblNewLabel.setVisible( false );
         frame.add( lblNewLabel );
         final JLabel name = new JLabel( "Your name is " + stud.getName() );
-        name.setBounds( 150, 150, 300, 100 );
+        name.setBounds( 150, 230, 300, 100 );
         frame.add( name );
         list.addListSelectionListener( new ListSelectionListener()
         {
@@ -95,11 +95,16 @@ public class LynderUI_2
             {
                 lblNewLabel.setText( "selected student name: " + list.getSelectedValue() );
                 index = list.getSelectedIndex();
+                if ( list.getSelectedValue() == null )
+                    lblNewLabel.setText( "no student selected" );
                 lblNewLabel.setVisible( true );
             }
         } );
-        final JTextField textField = new JTextField("rating");
-        textField.setBounds( 90, 100, 100, 25 );
+        final JLabel lable = new JLabel( "Rating: " );
+        lable.setBounds( 50, 150, 100, 25 );
+        frame.add( lable );
+        final JTextField textField = new JTextField();
+        textField.setBounds( 200, 150, 100, 25 );
         frame.add( textField );
         final JButton button = new JButton();
         button.setText( "enter" );
@@ -109,6 +114,7 @@ public class LynderUI_2
             @Override
             public void actionPerformed( ActionEvent e )
             {
+               
                 ListSelectionModel selmodel = list.getSelectionModel();
                 int index = selmodel.getMinSelectionIndex();
                 String name = model.elementAt( index );
@@ -119,11 +125,11 @@ public class LynderUI_2
                 textField.setText( "" );
             }
         } );
-        button.setBounds( 95, 130, 100, 50 );
+        button.setBounds( 50, 200, 100, 50 );
         frame.add( button );
         final JButton LastEntry = new JButton();
         LastEntry.setText( "Last Entry" );
-        LastEntry.setBounds( 200, 40, 150, 30 );
+        LastEntry.setBounds( 200, 200, 150, 50 );
         LastEntry.addActionListener( new ActionListener()
         {
             @SuppressWarnings("static-access")

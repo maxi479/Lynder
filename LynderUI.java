@@ -28,6 +28,8 @@ public class LynderUI extends Frame implements ActionListener
 
     private JLabel lblNewLabel_3;
 
+    private JLabel allOK;
+
 
     /**
      * Launch the application.
@@ -80,6 +82,11 @@ public class LynderUI extends Frame implements ActionListener
         frame.getContentPane().add( textField );
         textField.setColumns( 10 );
 
+        allOK = new JLabel( "You have not entered a GPA Value!" );
+        allOK.setBounds( 110, 280, 250, 50 );
+        allOK.setVisible( false );
+        frame.getContentPane().add( allOK );
+
         JLabel lblEnterYourGpa = new JLabel( "Enter Your GPA: " );
         lblEnterYourGpa.setBounds( 57, 121, 126, 43 );
         frame.getContentPane().add( lblEnterYourGpa );
@@ -96,6 +103,7 @@ public class LynderUI extends Frame implements ActionListener
         lblNewLabel_1 = new JLabel( "Congrats! You've been added to the system!" );
         lblNewLabel_1.setFont( new Font( "Lucida Grande", Font.PLAIN, 9 ) );
         lblNewLabel_1.setBounds( 108, 226, 199, 26 );
+        lblNewLabel_1.setVisible( true );
         frame.getContentPane().add( lblNewLabel_1 );
 
         lblNewLabel_2 = new JLabel( "" );
@@ -120,7 +128,7 @@ public class LynderUI extends Frame implements ActionListener
             public void actionPerformed( ActionEvent e )
             {
                 frame.setVisible( false );
-                //for ( Student s : Lynder.getMasterList() )
+                // for ( Student s : Lynder.getMasterList() )
                 {
                     LynderUI_2 temp = new LynderUI_2( Lynder.getMasterList().get( 0 ) );
                     temp.main( null );
@@ -141,14 +149,25 @@ public class LynderUI extends Frame implements ActionListener
     @Override
     public void actionPerformed( ActionEvent e )
     {
-        lblNewLabel_1.setVisible( true );
-        lblNewLabel_3.setVisible( true );
-        name = textField.getText();
-        gpa = Double.parseDouble( textField_1.getText() );
-        lblNewLabel_2.setText( "Your name is " + name + " with a GPA of " + gpa );
-        Student newStudent = new Student( name, gpa );
-        Lynder.addNewStud( newStudent );
-        setVisible( false );
+        try
+        {
+            name = textField.getText();
+            gpa = Double.parseDouble( textField_1.getText() );
+            lblNewLabel_2.setText( "Your name is " + name + " with a GPA of " + gpa );
+            Student newStudent = new Student( name, gpa );
+            Lynder.addNewStud( newStudent );
+            lblNewLabel_1.setVisible( true );
+            lblNewLabel_3.setVisible( true );
+            allOK.setVisible( false );
+        }
+        catch ( NumberFormatException a )
+        {
+            allOK.setVisible( true );
+            frame.getContentPane().add( allOK );
+            lblNewLabel_1.setVisible( false );
+            lblNewLabel_3.setVisible( false );
+        }
+
 
     }
 
