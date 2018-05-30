@@ -236,7 +236,7 @@ public class LynderJUnitTest extends TestCase
 
     /**
      * 
-     * Tests LYnder's iterator method.
+     * Tests Lynder's iterator method.
      */
     @SuppressWarnings("static-access")
     @Test
